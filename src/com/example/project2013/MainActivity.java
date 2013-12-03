@@ -1,15 +1,24 @@
 package com.example.project2013;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 
-public class MainActivity extends Activity {
+import com.example.project2013.MenuFragment.CharacterListener;
+
+public class MainActivity extends FragmentActivity implements CharacterListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		MenuFragment menu
+			=(MenuFragment)getSupportFragmentManager()
+				.findFragmentById(R.id.fragment_menu);
+		
+		menu.setCharacterListener(this);
 	}
 
 	@Override
@@ -19,4 +28,16 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
+	public void onCharacterSelected(Character character) {
+		
+		if((getSupportFragmentManager().findFragmentById(R.id.fragment_content) != null)) {
+			((FragmentContent)getSupportFragmentManager()
+				.findFragmentById(R.id.fragment_content)).printMessage(character.getDescription());
+		}
+		else {
+			Intent i = new Intent(this, ContentActivity.class);
+			i.putExtra("selected", character.getDescription());
+			startActivity(i);
+		}
+	}
 }
