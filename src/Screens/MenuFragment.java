@@ -1,5 +1,6 @@
-package com.example.project2013;
+package Screens;
 
+import Logic.User;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,8 +12,11 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TabHost;
 import android.widget.TextView;
+
+import com.example.project2013.R;
+import com.example.project2013.R.id;
+import com.example.project2013.R.layout;
 
 public class MenuFragment extends Fragment {
 	

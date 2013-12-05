@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         
-        <activity android:name="com.example.project2013.ContentActivity" android:label="@string/app_name" />
+        <activity android:name="com.example.project2013.ContentActivity" />
     </application>
 
 </manifest>

@@ -1,12 +1,17 @@
 package com.example.project2013;
 
+import Logic.User;
+import Screens.FragmentContent;
+import Screens.MenuFragment;
+import Screens.MenuFragment.UserListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.view.Menu;
 
-import com.example.project2013.MenuFragment.UserListener;
+import com.example.project2013.R;
+
 
 public class MainActivity extends FragmentActivity implements UserListener {
 
@@ -17,6 +22,8 @@ public class MainActivity extends FragmentActivity implements UserListener {
 		
 		FragmentTabHost mTabHost = (FragmentTabHost)findViewById(android.R.id.tabhost);
 	    mTabHost.setup(this, getSupportFragmentManager(), R.id.fragment_menu);
+	    mTabHost.addTab(mTabHost.newTabSpec("tab1").setIndicator("Tab1"),
+	            MenuFragment.class, null);
 	    mTabHost.addTab(mTabHost.newTabSpec("tab1").setIndicator("Tab1"),
 	            MenuFragment.class, null);
 	}
