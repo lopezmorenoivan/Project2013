@@ -1,9 +1,9 @@
 package com.example.project2013;
 
 import Logic.User;
-import Screens.FragmentContent;
-import Screens.MenuFragment;
-import Screens.MenuFragment.UserListener;
+import Screens.ContactContentFragment;
+import Screens.ContactsFragment;
+import Screens.ContactsFragment.UserListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -21,9 +21,9 @@ public class MainActivity extends FragmentActivity implements UserListener {
 		FragmentTabHost mTabHost = (FragmentTabHost)findViewById(android.R.id.tabhost);
 	    mTabHost.setup(this, getSupportFragmentManager(), R.id.fragment_menu);
 	    mTabHost.addTab(mTabHost.newTabSpec("tab1").setIndicator("Tab1"),
-	            MenuFragment.class, null);
-	    mTabHost.addTab(mTabHost.newTabSpec("tab1").setIndicator("Tab1"),
-	            MenuFragment.class, null);
+	            ContactsFragment.class, null);
+	    mTabHost.addTab(mTabHost.newTabSpec("tab2").setIndicator("Tab2"),
+	            ContactsFragment.class, null);
 	}
 
 	@Override
@@ -31,9 +31,9 @@ public class MainActivity extends FragmentActivity implements UserListener {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		
-		MenuFragment menuFragment = (MenuFragment) getSupportFragmentManager().
+		ContactsFragment contactsFragment = (ContactsFragment) getSupportFragmentManager().
 				findFragmentById(R.id.fragment_menu);
-	    menuFragment.setUserListener(this);
+	    contactsFragment.setUserListener(this);
 	    
 		return true;
 	}
@@ -41,11 +41,11 @@ public class MainActivity extends FragmentActivity implements UserListener {
 	public void onUserSelected(User user) {
 		
 		if((getSupportFragmentManager().findFragmentById(R.id.fragment_content) != null)) {
-			((FragmentContent)getSupportFragmentManager()
+			((ContactContentFragment)getSupportFragmentManager()
 				.findFragmentById(R.id.fragment_content)).printMessage(user.toString());
 		}
 		else {
-			Intent i = new Intent(this, ContentActivity.class);
+			Intent i = new Intent(this, ContactContentActivity.class);
 			i.putExtra("selected", user.toString());
 			startActivity(i);
 		}

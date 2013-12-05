@@ -34,11 +34,15 @@ public final class R {
         public static final int search=0x7f090006;
     }
     public static final class layout {
-        public static final int activity_content=0x7f030000;
+        public static final int activity_contact_content=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int activity_main_twopane=0x7f030002;
-        public static final int fragment_content=0x7f030003;
-        public static final int fragment_menu=0x7f030004;
+        public static final int fragment_agenda=0x7f030003;
+        public static final int fragment_agenda_content=0x7f030004;
+        public static final int fragment_contact_content=0x7f030005;
+        public static final int fragment_contacts=0x7f030006;
+        public static final int fragment_new_content=0x7f030007;
+        public static final int fragment_news=0x7f030008;
     }
     public static final class menu {
         public static final int main=0x7f080000;

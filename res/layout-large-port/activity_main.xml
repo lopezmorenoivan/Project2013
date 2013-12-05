@@ -17,7 +17,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_weight="0"/>
 	
-		<fragment class="Screens.MenuFragment"
+		<fragment class="Screens.ContactsFragment"
 			android:id="@+id/fragment_menu"
 			android:layout_weight="40"
 			android:layout_width="match_parent"

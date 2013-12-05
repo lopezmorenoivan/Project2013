@@ -18,7 +18,7 @@ import com.example.project2013.R;
 import com.example.project2013.R.id;
 import com.example.project2013.R.layout;
 
-public class MenuFragment extends Fragment {
+public class ContactsFragment extends Fragment {
 	
 	private ListView list;
 	
@@ -35,7 +35,7 @@ public class MenuFragment extends Fragment {
 			                 ViewGroup container, 
 			                 Bundle savedInstanceState) {
 		
-		return inflater.inflate(R.layout.fragment_menu, container, false);
+		return inflater.inflate(R.layout.fragment_contacts, container, false);
 	}
 	
 	@Override

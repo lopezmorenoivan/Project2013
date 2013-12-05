@@ -11,14 +11,14 @@ import com.example.project2013.R;
 import com.example.project2013.R.id;
 import com.example.project2013.R.layout;
 
-public class FragmentContent extends Fragment {
+public class ContactContentFragment extends Fragment {
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, 
 			                 ViewGroup container, 
 			                 Bundle savedInstanceState) {
 		
-		return inflater.inflate(R.layout.fragment_content, container, false);
+		return inflater.inflate(R.layout.fragment_contact_content, container, false);
 	}
 	
 	public void printMessage(String text) {

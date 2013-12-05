@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         
-        <activity android:name="com.example.project2013.ContentActivity" />
+        <activity android:name="com.example.project2013.ContactContentActivity" />
     </application>
 
 </manifest>
