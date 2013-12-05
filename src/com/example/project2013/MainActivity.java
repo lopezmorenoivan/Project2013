@@ -10,8 +10,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.view.Menu;
 
-import com.example.project2013.R;
-
 
 public class MainActivity extends FragmentActivity implements UserListener {
 
