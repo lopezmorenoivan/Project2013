@@ -2,7 +2,6 @@ package Screens;
 
 import Logic.User;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,16 +16,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.project2013.ContactContentActivity;
-import com.example.project2013.MainActivity;
 import com.example.project2013.R;
-import com.example.project2013.R.id;
-import com.example.project2013.R.layout;
 
 public class ContactsFragment extends Fragment {
 	
 	private ListView list;
-	
-	private UserListener listener;
 
 	User julien = new User (1, "Julien", "Polizzi", 1, "+4511111111", "140E", 1,"pos1" ,"julien.polizzi@gmail.com");
 	User matthieu = new User (2, "Matthieu", "Patin", 2, "+4522222222", "140E", 2, "pos2", "matthieu.patin@gmail.com");
@@ -45,23 +39,18 @@ public class ContactsFragment extends Fragment {
 	@Override
 	public void onActivityCreated(Bundle state) {
 		super.onActivityCreated(state);
-		Log.v("fragment","1");
-		list = (ListView)getView().findViewById(R.id.list);
-		Log.v("fragment","2");
+		
+		list = (ListView)getView().findViewById(R.id.ContactsList);
 		list.setAdapter(new AdapterUsers(this));
-		Log.v("fragment","3");
 		list.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> list, View view, int pos, long id) {
-				Log.v("fragment","4");
 				if((getFragmentManager().findFragmentById(R.id.fragment_contact_content) != null)) {
-					Log.v("fragment","5");
 					((ContactContentFragment)getFragmentManager()
 							.findFragmentById(R.id.fragment_contact_content)).
 							printMessage(list.getAdapter().getItem(pos).toString());
 				}
 				else {
-					Log.v("fragment","6");
 					Intent i = new Intent(getActivity().getApplicationContext(), ContactContentActivity.class);
 					i.putExtra("selected", list.getAdapter().getItem(pos).toString());
 					startActivity(i);
@@ -92,12 +81,4 @@ public class ContactsFragment extends Fragment {
 			return(item);
 		}
     }
-	
-	public interface UserListener {
-		void onUserSelected(User user);
-	}
-	
-	public void setUserListener(UserListener listener) {
-		this.listener=listener;
-	}
 }
