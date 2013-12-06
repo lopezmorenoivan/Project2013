@@ -1,53 +1,63 @@
 package com.example.project2013;
 
-import Logic.User;
-import Screens.ContactContentFragment;
+import Screens.AgendaFragment;
 import Screens.ContactsFragment;
-import Screens.ContactsFragment.UserListener;
-import android.content.Intent;
+import Screens.NewsFragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.view.Menu;
+import android.widget.TabHost.OnTabChangeListener;
 
 
-public class MainActivity extends FragmentActivity implements UserListener {
+public class MainActivity extends FragmentActivity {
+	private FragmentTabHost mTabHost;
+	private final String TAB1 = "fragment_contacts";
+	private final String TAB2 = "fragment_agenda";
+	private final String TAB3 = "fragment_news";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		FragmentTabHost mTabHost = (FragmentTabHost)findViewById(android.R.id.tabhost);
-	    mTabHost.setup(this, getSupportFragmentManager(), R.id.fragment_menu);
-	    mTabHost.addTab(mTabHost.newTabSpec("tab1").setIndicator("Tab1"),
-	            ContactsFragment.class, null);
-	    mTabHost.addTab(mTabHost.newTabSpec("tab2").setIndicator("Tab2"),
-	            ContactsFragment.class, null);
+		setupTabs();
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
-		
-		ContactsFragment contactsFragment = (ContactsFragment) getSupportFragmentManager().
-				findFragmentById(R.id.fragment_menu);
-	    contactsFragment.setUserListener(this);
-	    
+
 		return true;
 	}
-
-	public void onUserSelected(User user) {
+	
+	private void setupTabs() {
+		mTabHost = (FragmentTabHost)findViewById(android.R.id.tabhost);
 		
-		if((getSupportFragmentManager().findFragmentById(R.id.fragment_content) != null)) {
-			((ContactContentFragment)getSupportFragmentManager()
-				.findFragmentById(R.id.fragment_content)).printMessage(user.toString());
-		}
-		else {
-			Intent i = new Intent(this, ContactContentActivity.class);
-			i.putExtra("selected", user.toString());
-			startActivity(i);
-		}
+	    mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
+	    
+	    mTabHost.addTab(mTabHost.newTabSpec(TAB1).setIndicator("Contacts"),
+	            ContactsFragment.class, null);
+	    mTabHost.addTab(mTabHost.newTabSpec(TAB2).setIndicator("Agenda"),
+	            AgendaFragment.class, null);
+	    mTabHost.addTab(mTabHost.newTabSpec(TAB3).setIndicator("News"),
+	            NewsFragment.class, null);
+	    
+	    mTabHost.setCurrentTab(0);
+	    
+	    mTabHost.setOnTabChangedListener(new OnTabChangeListener(){
+	    	@Override
+	    	public void onTabChanged(String tabId) {
+	    	    if(TAB1.equals(tabId)) {
+	    	    	mTabHost.setCurrentTab(0);
+	    	    } else if(TAB2.equals(tabId)) {
+	    	    	mTabHost.setCurrentTab(1);
+	    	    } else {
+	    	    	mTabHost.setCurrentTab(2);
+	    	    }
+	    	}
+	    });
 	}
+
 }

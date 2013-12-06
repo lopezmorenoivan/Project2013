@@ -1,112 +1,88 @@
 package Screens;
 
-import com.example.project2013.R;
-import com.example.project2013.R.layout;
-
+import Logic.New;
+import Screens.ContactsFragment.AdapterUsers;
 import android.app.Activity;
-import android.net.Uri;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
-/**
- * A simple {@link android.support.v4.app.Fragment} subclass. Activities that
- * contain this fragment must implement the
- * {@link NewsFragment.OnFragmentInteractionListener} interface to handle
- * interaction events. Use the {@link NewsFragment#newInstance} factory method
- * to create an instance of this fragment.
- * 
- */
+import com.example.project2013.ContactContentActivity;
+import com.example.project2013.NewContentActivity;
+import com.example.project2013.R;
+
 public class NewsFragment extends Fragment {
-	// TODO: Rename parameter arguments, choose names that match
-	// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-	private static final String ARG_PARAM1 = "param1";
-	private static final String ARG_PARAM2 = "param2";
-
-	// TODO: Rename and change types of parameters
-	private String mParam1;
-	private String mParam2;
-
-	private OnFragmentInteractionListener mListener;
-
-	/**
-	 * Use this factory method to create a new instance of this fragment using
-	 * the provided parameters.
-	 * 
-	 * @param param1
-	 *            Parameter 1.
-	 * @param param2
-	 *            Parameter 2.
-	 * @return A new instance of fragment NewsFragment.
-	 */
-	// TODO: Rename and change types and number of parameters
-	public static NewsFragment newInstance(String param1, String param2) {
-		NewsFragment fragment = new NewsFragment();
-		Bundle args = new Bundle();
-		args.putString(ARG_PARAM1, param1);
-		args.putString(ARG_PARAM2, param2);
-		fragment.setArguments(args);
-		return fragment;
-	}
-
-	public NewsFragment() {
-		// Required empty public constructor
-	}
-
+	
+	private ListView list;
+	
+	New first = new New ("first", "this is the first new", "this is the first description", null);
+	New second = new New ("second", "this is the second new", "this is the second description", null);
+	New third = new New ("third", "this is the third new", "this is the third description", null);
+	New fourth = new New ("fourth", "this is the fourth new", "this is the fourth description", null);
+	New fifth = new New ("fifth", "this is the fifth new", "this is the fifth description", null);
+	
+	New news [] = {first, second, third, fourth, fifth};
+	
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		if (getArguments() != null) {
-			mParam1 = getArguments().getString(ARG_PARAM1);
-			mParam2 = getArguments().getString(ARG_PARAM2);
-		}
-	}
-
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		// Inflate the layout for this fragment
+	public View onCreateView(LayoutInflater inflater, 
+			                 ViewGroup container, 
+			                 Bundle savedInstanceState) {
+		
 		return inflater.inflate(R.layout.fragment_news, container, false);
 	}
-
-	// TODO: Rename method, update argument and hook method into UI event
-	public void onButtonPressed(Uri uri) {
-		if (mListener != null) {
-			mListener.onFragmentInteraction(uri);
-		}
-	}
-
+	
 	@Override
-	public void onAttach(Activity activity) {
-		super.onAttach(activity);
-		try {
-			mListener = (OnFragmentInteractionListener) activity;
-		} catch (ClassCastException e) {
-			throw new ClassCastException(activity.toString()
-					+ " must implement OnFragmentInteractionListener");
+	public void onActivityCreated(Bundle state) {
+		super.onActivityCreated(state);
+		
+		list = (ListView)getView().findViewById(R.id.NewsList);
+		list.setAdapter(new AdapterNews(this));
+		list.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> list, View view, int pos, long id) {
+				if((getFragmentManager().findFragmentById(R.id.fragment_new_content) != null)) {
+					((NewContentFragment)getFragmentManager()
+							.findFragmentById(R.id.fragment_new_content)).
+							printMessage(list.getAdapter().getItem(pos).toString());
+				}
+				else {
+					Intent i = new Intent(getActivity().getApplicationContext(), NewContentActivity.class);
+					i.putExtra("selected", list.getAdapter().getItem(pos).toString());
+					startActivity(i);
+				}
+			}
+		});
+	}
+	
+	class AdapterNews extends ArrayAdapter<New> {
+    	
+    	Activity context;
+    	
+    	AdapterNews(Fragment context) {
+    		super(context.getActivity(), R.layout.activity_main_twopane, news);
+    		this.context = context.getActivity();
+    	}
+    	
+    	public View getView(int position, View convertView, ViewGroup parent) {
+			LayoutInflater inflater = context.getLayoutInflater();
+			View item = inflater.inflate(R.layout.activity_main_twopane, null);
+			
+			TextView name = (TextView)item.findViewById(R.id.Name);
+			name.setText(news[position].getTitle());
+			
+			TextView kindship = (TextView)item.findViewById(R.id.Kindship);
+			kindship.setText("");
+			
+			return(item);
 		}
-	}
-
-	@Override
-	public void onDetach() {
-		super.onDetach();
-		mListener = null;
-	}
-
-	/**
-	 * This interface must be implemented by activities that contain this
-	 * fragment to allow an interaction in this fragment to be communicated to
-	 * the activity and potentially other fragments contained in that activity.
-	 * <p>
-	 * See the Android Training lesson <a href=
-	 * "http://developer.android.com/training/basics/fragments/communicating.html"
-	 * >Communicating with Other Fragments</a> for more information.
-	 */
-	public interface OnFragmentInteractionListener {
-		// TODO: Update argument type and name
-		public void onFragmentInteraction(Uri uri);
-	}
-
+    }
 }

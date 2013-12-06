@@ -1,112 +1,85 @@
 package Screens;
 
-import com.example.project2013.R;
-import com.example.project2013.R.layout;
-
+import Logic.Task;
 import android.app.Activity;
-import android.net.Uri;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
-/**
- * A simple {@link android.support.v4.app.Fragment} subclass. Activities that
- * contain this fragment must implement the
- * {@link AgendaFragment.OnFragmentInteractionListener} interface to handle
- * interaction events. Use the {@link AgendaFragment#newInstance} factory method
- * to create an instance of this fragment.
- * 
- */
+import com.example.project2013.AgendaContentActivity;
+import com.example.project2013.R;
+
 public class AgendaFragment extends Fragment {
-	// TODO: Rename parameter arguments, choose names that match
-	// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-	private static final String ARG_PARAM1 = "param1";
-	private static final String ARG_PARAM2 = "param2";
+	
+	private ListView list;
 
-	// TODO: Rename and change types of parameters
-	private String mParam1;
-	private String mParam2;
-
-	private OnFragmentInteractionListener mListener;
-
-	/**
-	 * Use this factory method to create a new instance of this fragment using
-	 * the provided parameters.
-	 * 
-	 * @param param1
-	 *            Parameter 1.
-	 * @param param2
-	 *            Parameter 2.
-	 * @return A new instance of fragment AgendaFragment.
-	 */
-	// TODO: Rename and change types and number of parameters
-	public static AgendaFragment newInstance(String param1, String param2) {
-		AgendaFragment fragment = new AgendaFragment();
-		Bundle args = new Bundle();
-		args.putString(ARG_PARAM1, param1);
-		args.putString(ARG_PARAM2, param2);
-		fragment.setArguments(args);
-		return fragment;
-	}
-
-	public AgendaFragment() {
-		// Required empty public constructor
-	}
-
+	Task first = new Task ("first","do the first thing", null);
+	Task second = new Task ("second","do the second thing",null);
+	Task third = new Task ("third","do the third thing",null);
+	Task fourth = new Task ("fourth","do the fourth thing",null);
+	Task fifth = new Task ("fifth","do the fifth thing",null);
+	
+	Task tasks [] = {first, second, third, fourth, fifth};
+	
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		if (getArguments() != null) {
-			mParam1 = getArguments().getString(ARG_PARAM1);
-			mParam2 = getArguments().getString(ARG_PARAM2);
-		}
-	}
-
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		// Inflate the layout for this fragment
+	public View onCreateView(LayoutInflater inflater, 
+			                 ViewGroup container, 
+			                 Bundle savedInstanceState) {
+		
 		return inflater.inflate(R.layout.fragment_agenda, container, false);
 	}
-
-	// TODO: Rename method, update argument and hook method into UI event
-	public void onButtonPressed(Uri uri) {
-		if (mListener != null) {
-			mListener.onFragmentInteraction(uri);
-		}
-	}
-
+	
 	@Override
-	public void onAttach(Activity activity) {
-		super.onAttach(activity);
-		try {
-			mListener = (OnFragmentInteractionListener) activity;
-		} catch (ClassCastException e) {
-			throw new ClassCastException(activity.toString()
-					+ " must implement OnFragmentInteractionListener");
+	public void onActivityCreated(Bundle state) {
+		super.onActivityCreated(state);
+		
+		list = (ListView)getView().findViewById(R.id.AgendaList);
+		list.setAdapter(new AdapterTasks(this));
+		list.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> list, View view, int pos, long id) {
+				if((getFragmentManager().findFragmentById(R.id.fragment_agenda_content) != null)) {
+					((AgendaContentFragment)getFragmentManager()
+							.findFragmentById(R.id.fragment_agenda_content)).
+							printMessage(list.getAdapter().getItem(pos).toString());
+				}
+				else {
+					Intent i = new Intent(getActivity().getApplicationContext(), AgendaContentActivity.class);
+					i.putExtra("selected", list.getAdapter().getItem(pos).toString());
+					startActivity(i);
+				}
+			}
+		});
+	}
+	
+	class AdapterTasks extends ArrayAdapter<Task> {
+    	
+    	Activity context;
+    	
+    	AdapterTasks(Fragment context) {
+    		super(context.getActivity(), R.layout.activity_main_twopane, tasks);
+    		this.context = context.getActivity();
+    	}
+    	
+    	public View getView(int position, View convertView, ViewGroup parent) {
+			LayoutInflater inflater = context.getLayoutInflater();
+			View item = inflater.inflate(R.layout.activity_main_twopane, null);
+			
+			TextView name = (TextView)item.findViewById(R.id.Name);
+			name.setText(tasks[position].getName());
+			
+			TextView kindship = (TextView)item.findViewById(R.id.Kindship);
+			kindship.setText("");
+			
+			return(item);
 		}
-	}
-
-	@Override
-	public void onDetach() {
-		super.onDetach();
-		mListener = null;
-	}
-
-	/**
-	 * This interface must be implemented by activities that contain this
-	 * fragment to allow an interaction in this fragment to be communicated to
-	 * the activity and potentially other fragments contained in that activity.
-	 * <p>
-	 * See the Android Training lesson <a href=
-	 * "http://developer.android.com/training/basics/fragments/communicating.html"
-	 * >Communicating with Other Fragments</a> for more information.
-	 */
-	public interface OnFragmentInteractionListener {
-		// TODO: Update argument type and name
-		public void onFragmentInteraction(Uri uri);
-	}
-
+    }
 }

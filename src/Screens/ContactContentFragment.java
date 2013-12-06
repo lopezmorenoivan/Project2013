@@ -12,18 +12,18 @@ import com.example.project2013.R.id;
 import com.example.project2013.R.layout;
 
 public class ContactContentFragment extends Fragment {
-	
-	@Override
-	public View onCreateView(LayoutInflater inflater, 
-			                 ViewGroup container, 
-			                 Bundle savedInstanceState) {
-		
-		return inflater.inflate(R.layout.fragment_contact_content, container, false);
-	}
-	
-	public void printMessage(String text) {
-		TextView message = (TextView)getView().findViewById(R.id.Content);
-		
-		message.setText(text);
-	}
+        
+        @Override
+        public View onCreateView(LayoutInflater inflater, 
+                                         ViewGroup container, 
+                                         Bundle savedInstanceState) {
+                
+                return inflater.inflate(R.layout.fragment_contact_content, container, false);
+        }
+        
+        public void printMessage(String text) {
+                TextView message = (TextView)getView().findViewById(R.id.ContactContent);
+                
+                message.setText(text);
+        }
 }

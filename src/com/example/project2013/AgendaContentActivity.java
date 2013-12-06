@@ -1,22 +1,22 @@
 package com.example.project2013;
 
+import Screens.AgendaContentFragment;
 import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
+import android.support.v4.app.FragmentActivity;
 
-public class AgendaContentActivity extends Activity {
+import com.example.project2013.R;
 
+public class AgendaContentActivity extends FragmentActivity {
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_agenda_content);
+		
+		AgendaContentFragment content = (AgendaContentFragment)getSupportFragmentManager()
+					.findFragmentById(R.id.fragment_agenda_content);
+		
+		content.printMessage(getIntent().getStringExtra("selected"));
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.agenda_content, menu);
-		return true;
-	}
-
 }

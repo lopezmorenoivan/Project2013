@@ -5,7 +5,7 @@
     android:id="@android:id/tabhost"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-	<LinearLayout
+<LinearLayout
 	    android:orientation="vertical"
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent">
@@ -16,15 +16,15 @@
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_weight="0"/>
-	
-		<fragment class="Screens.ContactsFragment"
-			android:id="@+id/fragment_menu"
+	    
+	    <fragment class="Screens.ContactsFragment"
+			android:id="@+id/fragment_contacts"
 			android:layout_weight="40"
 			android:layout_width="match_parent"
 			android:layout_height="0px" />
 		
-		<fragment class="com.example.project2013.ContentFragment"
-			android:id="@+id/fragment_content"
+		<fragment class="com.example.project2013.ContactContentFragment"
+			android:id="@+id/fragment_contacts_content"
 			android:layout_weight="60"
 			android:layout_width="match_parent"
 			android:layout_height="0px" />
