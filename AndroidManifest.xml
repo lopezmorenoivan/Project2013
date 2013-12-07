@@ -24,7 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.project2013.ContactContentActivity" 
+        <activity 
+            android:name="com.example.project2013.ContactContentActivity" 
             android:label="@string/name_shown" />
         <activity
             android:name="com.example.project2013.NewContentActivity"

@@ -60,7 +60,7 @@ public class AgendaFragment extends Fragment {
 				AgendaContentFragment fragment = ((AgendaContentFragment)getFragmentManager()
 						.findFragmentById(R.id.fragment_agenda_content));
 				
-				if(fragment != null) {
+				if(getResources().getBoolean(R.bool.isTablet)) {
 					fragment.printHead(task.getName());
 					fragment.printContent(task.getDescription());
 					fragment.printDate(task.getDate());
@@ -81,18 +81,18 @@ public class AgendaFragment extends Fragment {
     	Activity context;
     	
     	AdapterTasks(Fragment context) {
-    		super(context.getActivity(), R.layout.activity_main_twopane, tasks);
+    		super(context.getActivity(), R.layout.list_view, tasks);
     		this.context = context.getActivity();
     	}
     	
     	public View getView(int position, View convertView, ViewGroup parent) {
 			LayoutInflater inflater = context.getLayoutInflater();
-			View item = inflater.inflate(R.layout.activity_main_twopane, null);
+			View item = inflater.inflate(R.layout.list_view, null);
 			
-			TextView name = (TextView)item.findViewById(R.id.Name);
+			TextView name = (TextView)item.findViewById(R.id.FirstLabel);
 			name.setText(tasks[position].getName());
 			
-			TextView kindship = (TextView)item.findViewById(R.id.Kindship);
+			TextView kindship = (TextView)item.findViewById(R.id.SecondLabel);
 			kindship.setText("");
 			
 			return(item);

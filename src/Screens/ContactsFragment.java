@@ -48,9 +48,8 @@ public class ContactsFragment extends Fragment {
 			@Override
 			public void onItemClick(AdapterView<?> list, View view, int pos, long id) {
 				User contact = (User) list.getAdapter().getItem(pos);
-				ContactContentFragment fragment = ((ContactContentFragment) getFragmentManager()
-						.findFragmentById(R.id.fragment_contact_content));
-				if(fragment != null) {
+				ContactContentFragment fragment = new ContactContentFragment();
+				if(getResources().getBoolean(R.bool.isTablet)) {
 					fragment.printName(contact.getName()+" "+contact.getSurname());
 					fragment.printPosition(contact.getPosition());
 					fragment.printPicture(contact.getPicture());
@@ -76,18 +75,18 @@ public class ContactsFragment extends Fragment {
     	Activity context;
     	
     	AdapterUsers(Fragment context) {
-    		super(context.getActivity(), R.layout.activity_main_twopane, users);
+    		super(context.getActivity(), R.layout.list_view, users);
     		this.context = context.getActivity();
     	}
     	
     	public View getView(int position, View convertView, ViewGroup parent) {
 			LayoutInflater inflater = context.getLayoutInflater();
-			View item = inflater.inflate(R.layout.activity_main_twopane, null);
+			View item = inflater.inflate(R.layout.list_view, null);
 			
-			TextView name = (TextView)item.findViewById(R.id.Name);
+			TextView name = (TextView)item.findViewById(R.id.FirstLabel);
 			name.setText(users[position].getName());
 			
-			TextView kindship = (TextView)item.findViewById(R.id.Kindship);
+			TextView kindship = (TextView)item.findViewById(R.id.SecondLabel);
 			kindship.setText(users[position].getPosition());
 			
 			return(item);

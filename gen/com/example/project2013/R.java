@@ -10,6 +10,9 @@ package com.example.project2013;
 public final class R {
     public static final class attr {
     }
+    public static final class bool {
+        public static final int isTablet=0x7f060000;
+    }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
 
@@ -25,65 +28,64 @@ public final class R {
         public static final int ic_search=0x7f020001;
     }
     public static final class id {
-        public static final int AgendaContent=0x7f09000a;
-        public static final int AgendaDate=0x7f09000b;
-        public static final int AgendaHead=0x7f090009;
-        public static final int AgendaList=0x7f090008;
-        public static final int ContactLocation=0x7f090012;
-        public static final int ContactMail=0x7f09000f;
-        public static final int ContactName=0x7f09000c;
-        public static final int ContactOffice=0x7f090011;
-        public static final int ContactPhone=0x7f090010;
-        public static final int ContactPicture=0x7f09000e;
-        public static final int ContactPosition=0x7f09000d;
-        public static final int ContactsList=0x7f090013;
-        public static final int Kindship=0x7f090006;
-        public static final int Name=0x7f090005;
-        public static final int NewContent=0x7f090016;
-        public static final int NewHead=0x7f090014;
-        public static final int NewImage=0x7f090015;
-        public static final int NewsList=0x7f090017;
-        public static final int action_settings=0x7f090018;
-        public static final int fragment_agenda_content=0x7f090000;
-        public static final int fragment_contact_content=0x7f090001;
-        public static final int fragment_contacts=0x7f090003;
-        public static final int fragment_contacts_content=0x7f090004;
-        public static final int fragment_new_content=0x7f090007;
-        public static final int realtabcontent=0x7f090002;
-        public static final int search=0x7f090019;
+        public static final int AgendaContent=0x7f0a0007;
+        public static final int AgendaDate=0x7f0a0008;
+        public static final int AgendaHead=0x7f0a0006;
+        public static final int AgendaList=0x7f0a0005;
+        public static final int ContactLocation=0x7f0a000f;
+        public static final int ContactMail=0x7f0a000c;
+        public static final int ContactName=0x7f0a0009;
+        public static final int ContactOffice=0x7f0a000e;
+        public static final int ContactPhone=0x7f0a000d;
+        public static final int ContactPicture=0x7f0a000b;
+        public static final int ContactPosition=0x7f0a000a;
+        public static final int ContactsList=0x7f0a0010;
+        public static final int FirstLabel=0x7f0a0015;
+        public static final int NewContent=0x7f0a0013;
+        public static final int NewHead=0x7f0a0011;
+        public static final int NewImage=0x7f0a0012;
+        public static final int NewsList=0x7f0a0014;
+        public static final int SecondLabel=0x7f0a0016;
+        public static final int action_settings=0x7f0a0017;
+        public static final int fragment_agenda_content=0x7f0a0000;
+        public static final int fragment_contact_content=0x7f0a0001;
+        public static final int fragment_new_content=0x7f0a0004;
+        public static final int realtabcontent=0x7f0a0002;
+        public static final int search=0x7f0a0018;
+        public static final int tabletrealtabcontent=0x7f0a0003;
     }
     public static final class layout {
         public static final int activity_agenda_content=0x7f030000;
         public static final int activity_contact_content=0x7f030001;
         public static final int activity_main=0x7f030002;
-        public static final int activity_main_twopane=0x7f030003;
-        public static final int activity_new_content=0x7f030004;
-        public static final int fragment_agenda=0x7f030005;
-        public static final int fragment_agenda_content=0x7f030006;
-        public static final int fragment_contact_content=0x7f030007;
-        public static final int fragment_contacts=0x7f030008;
-        public static final int fragment_new_content=0x7f030009;
-        public static final int fragment_news=0x7f03000a;
+        public static final int activity_new_content=0x7f030003;
+        public static final int fragment_agenda=0x7f030004;
+        public static final int fragment_agenda_content=0x7f030005;
+        public static final int fragment_contact_content=0x7f030006;
+        public static final int fragment_contacts=0x7f030007;
+        public static final int fragment_new_content=0x7f030008;
+        public static final int fragment_news=0x7f030009;
+        public static final int list_view=0x7f03000a;
     }
     public static final class menu {
-        public static final int agenda_content=0x7f080000;
-        public static final int main=0x7f080001;
-        public static final int new_content=0x7f080002;
+        public static final int agenda_content=0x7f090000;
+        public static final int main=0x7f090001;
+        public static final int new_content=0x7f090002;
     }
     public static final class string {
-        public static final int SearchTitle=0x7f060004;
-        public static final int action_settings=0x7f060007;
-        public static final int app_name=0x7f060000;
-        public static final int hello_blank_fragment=0x7f060005;
-        public static final int hello_world=0x7f060001;
-        public static final int menu_message=0x7f060003;
-        public static final int menu_settings=0x7f060002;
-        public static final int name_shown=0x7f060009;
-        public static final int tab1=0x7f06000a;
-        public static final int tab2=0x7f06000b;
-        public static final int tab3=0x7f06000c;
-        public static final int title_activity_agenda_content=0x7f060008;
-        public static final int title_activity_new_content=0x7f060006;
+        public static final int SearchTitle=0x7f070004;
+        public static final int action_settings=0x7f070007;
+        public static final int app_name=0x7f070000;
+        public static final int hello_blank_fragment=0x7f070005;
+        public static final int hello_world=0x7f070001;
+        public static final int menu_message=0x7f070003;
+        public static final int menu_settings=0x7f070002;
+        public static final int name_shown=0x7f070009;
+        public static final int tab1=0x7f07000a;
+        public static final int tab2=0x7f07000b;
+        public static final int tab3=0x7f07000c;
+        public static final int title_activity_agenda_content=0x7f070008;
+        public static final int title_activity_new_content=0x7f070006;
     }
     public static final class style {
         /** 
@@ -107,11 +109,11 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f080001;
     }
     public static final class xml {
         public static final int searchable=0x7f040000;

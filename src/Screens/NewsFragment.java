@@ -59,7 +59,7 @@ public class NewsFragment extends Fragment {
 			public void onItemClick(AdapterView<?> list, View view, int pos, long id) {
 				New noticia = (New) list.getAdapter().getItem(pos);
 				
-				if((getFragmentManager().findFragmentById(R.id.fragment_new_content) != null)) {
+				if(getResources().getBoolean(R.bool.isTablet)) {
 					NewContentFragment fragment = ((NewContentFragment)getFragmentManager()
 							.findFragmentById(R.id.fragment_new_content));
 					fragment.printHead(noticia.getTitle());
@@ -82,18 +82,18 @@ public class NewsFragment extends Fragment {
     	Activity context;
     	
     	AdapterNews(Fragment context) {
-    		super(context.getActivity(), R.layout.activity_main_twopane, news);
+    		super(context.getActivity(), R.layout.list_view, news);
     		this.context = context.getActivity();
     	}
     	
     	public View getView(int position, View convertView, ViewGroup parent) {
 			LayoutInflater inflater = context.getLayoutInflater();
-			View item = inflater.inflate(R.layout.activity_main_twopane, null);
+			View item = inflater.inflate(R.layout.list_view, null);
 			
-			TextView name = (TextView)item.findViewById(R.id.Name);
+			TextView name = (TextView)item.findViewById(R.id.FirstLabel);
 			name.setText(news[position].getTitle());
 			
-			TextView kindship = (TextView)item.findViewById(R.id.Kindship);
+			TextView kindship = (TextView)item.findViewById(R.id.SecondLabel);
 			kindship.setText(news[position].getDescription());
 			
 			return(item);
