@@ -1,8 +1,10 @@
 package Logic;
 
+import java.io.Serializable;
+
 import android.graphics.Bitmap;
 
-public class New {
+public class New implements Serializable{
 	private String title;
 	private String content;
 	private String description;

@@ -1,9 +1,14 @@
 package Logic;
 
-public class User {
+import java.io.Serializable;
+
+import android.graphics.Bitmap;
+
+public class User implements Serializable {
 	private int id;
 	private String name;
 	private String surname;
+	private Bitmap picture;
 	private int privileges;
 	private String phone;
 	private String office;
@@ -11,13 +16,14 @@ public class User {
 	private String position;
 	private String mail;
 	
-	public User(int id, String name, String surname, int privileges,
-			String phone, String office, int location, String position,
-			String mail) {
+	public User(int id, String name, String surname, Bitmap picture,
+			int privileges, String phone, String office, int location,
+			String position, String mail) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.surname = surname;
+		this.picture = picture;
 		this.privileges = privileges;
 		this.phone = phone;
 		this.office = office;
@@ -43,6 +49,12 @@ public class User {
 	}
 	public void setSurname(String surname) {
 		this.surname = surname;
+	}
+	public Bitmap getPicture() {
+		return picture;
+	}
+	public void setPicture(Bitmap picture) {
+		this.picture = picture;
 	}
 	public int getPrivileges() {
 		return privileges;

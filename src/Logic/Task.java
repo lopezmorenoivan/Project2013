@@ -1,8 +1,9 @@
 package Logic;
 
+import java.io.Serializable;
 import java.util.GregorianCalendar;
 
-public class Task {
+public class Task implements Serializable{
 	private String name;
 	private String description;
 	private GregorianCalendar date;

@@ -1,5 +1,7 @@
 package Screens;
 
+import java.io.Serializable;
+
 import Logic.User;
 import android.app.Activity;
 import android.content.Intent;
@@ -22,10 +24,10 @@ public class ContactsFragment extends Fragment {
 	
 	private ListView list;
 
-	User julien = new User (1, "Julien", "Polizzi", 1, "+4511111111", "140E", 1,"pos1" ,"julien.polizzi@gmail.com");
-	User matthieu = new User (2, "Matthieu", "Patin", 2, "+4522222222", "140E", 2, "pos2", "matthieu.patin@gmail.com");
-	User daniel = new User (3, "Daniel", "Gutierrez", 3, "+4533333333", "140E", 3, "pos3", "daniel.gutierrez@gmail.com");
-	User ivan = new User (4, "Ivan", "Lopez", 4, "+4544444444", "140E", 4, "pos4", "ivan.lopez@gmail.com");
+	User julien = new User (1, "Julien", "Polizzi", null, 1, "+4511111111", "140E", 1,"pos1" ,"julien.polizzi@gmail.com");
+	User matthieu = new User (2, "Matthieu", "Patin", null, 2, "+4522222222", "140E", 2, "pos2", "matthieu.patin@gmail.com");
+	User daniel = new User (3, "Daniel", "Gutierrez", null, 3, "+4533333333", "140E", 3, "pos3", "daniel.gutierrez@gmail.com");
+	User ivan = new User (4, "Ivan", "Lopez", null, 4, "+4544444444", "140E", 4, "pos4", "ivan.lopez@gmail.com");
 	User users [] = {julien, matthieu, daniel, ivan};
 	
 	@Override
@@ -45,14 +47,24 @@ public class ContactsFragment extends Fragment {
 		list.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> list, View view, int pos, long id) {
-				if((getFragmentManager().findFragmentById(R.id.fragment_contact_content) != null)) {
-					((ContactContentFragment)getFragmentManager()
-							.findFragmentById(R.id.fragment_contact_content)).
-							printMessage(list.getAdapter().getItem(pos).toString());
-				}
-				else {
+				User contact = (User) list.getAdapter().getItem(pos);
+				ContactContentFragment fragment = ((ContactContentFragment) getFragmentManager()
+						.findFragmentById(R.id.fragment_contact_content));
+				if(fragment != null) {
+					fragment.printName(contact.getName()+" "+contact.getSurname());
+					fragment.printPosition(contact.getPosition());
+					fragment.printPicture(contact.getPicture());
+					fragment.printMail(contact.getMail());
+					fragment.printPhone(contact.getPhone());
+					fragment.printOffice(contact.getOffice());
+					fragment.printLocation(contact.getLocation());
+				} else {
 					Intent i = new Intent(getActivity().getApplicationContext(), ContactContentActivity.class);
-					i.putExtra("selected", list.getAdapter().getItem(pos).toString());
+					Bundle bundle = new Bundle();  
+					bundle.putSerializable("contact", (Serializable) contact);
+					i.putExtras(bundle);
+					
+					Log.v("contact","antes");
 					startActivity(i);
 				}
 			}

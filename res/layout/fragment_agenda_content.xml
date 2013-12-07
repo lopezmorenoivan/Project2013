@@ -6,8 +6,24 @@
     android:background="#FFBBBBBB" >
 
     <TextView
+        android:id="@+id/AgendaHead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name_shown"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
         android:id="@+id/AgendaContent"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/name_shown"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/AgendaDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name_shown"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </LinearLayout>

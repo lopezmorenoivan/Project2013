@@ -1,5 +1,6 @@
 package com.example.project2013;
 
+import Logic.Task;
 import Screens.AgendaContentFragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -14,9 +15,12 @@ public class AgendaContentActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_agenda_content);
 		
-		AgendaContentFragment content = (AgendaContentFragment)getSupportFragmentManager()
+		AgendaContentFragment fragment = (AgendaContentFragment)getSupportFragmentManager()
 					.findFragmentById(R.id.fragment_agenda_content);
+		Task task = (Task) getIntent().getExtras().getSerializable("task");
 		
-		content.printMessage(getIntent().getStringExtra("selected"));
+		fragment.printHead(task.getName());
+		fragment.printContent(task.getDescription());
+		fragment.printDate(task.getDate());
 	}
 }

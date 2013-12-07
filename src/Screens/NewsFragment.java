@@ -1,9 +1,14 @@
 package Screens;
 
+import java.io.File;
+import java.io.Serializable;
+
 import Logic.New;
 import Screens.ContactsFragment.AdapterUsers;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -23,6 +28,9 @@ import com.example.project2013.R;
 public class NewsFragment extends Fragment {
 	
 	private ListView list;
+	
+	File file= new File(android.os.Environment.getRootDirectory(),"Your folder");
+	Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
 	
 	New first = new New ("first", "this is the first new", "this is the first description", null);
 	New second = new New ("second", "this is the second new", "this is the second description", null);
@@ -49,14 +57,20 @@ public class NewsFragment extends Fragment {
 		list.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> list, View view, int pos, long id) {
+				New noticia = (New) list.getAdapter().getItem(pos);
+				
 				if((getFragmentManager().findFragmentById(R.id.fragment_new_content) != null)) {
-					((NewContentFragment)getFragmentManager()
-							.findFragmentById(R.id.fragment_new_content)).
-							printMessage(list.getAdapter().getItem(pos).toString());
+					NewContentFragment fragment = ((NewContentFragment)getFragmentManager()
+							.findFragmentById(R.id.fragment_new_content));
+					fragment.printHead(noticia.getTitle());
+					fragment.printContent(noticia.getContent());
+					fragment.printPicture(noticia.getPicture());
 				}
 				else {
 					Intent i = new Intent(getActivity().getApplicationContext(), NewContentActivity.class);
-					i.putExtra("selected", list.getAdapter().getItem(pos).toString());
+					Bundle bundle = new Bundle();  
+					bundle.putSerializable("new", (Serializable) noticia);
+					i.putExtras(bundle);
 					startActivity(i);
 				}
 			}
@@ -80,7 +94,7 @@ public class NewsFragment extends Fragment {
 			name.setText(news[position].getTitle());
 			
 			TextView kindship = (TextView)item.findViewById(R.id.Kindship);
-			kindship.setText("");
+			kindship.setText(news[position].getDescription());
 			
 			return(item);
 		}

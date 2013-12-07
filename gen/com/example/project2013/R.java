@@ -25,22 +25,32 @@ public final class R {
         public static final int ic_search=0x7f020001;
     }
     public static final class id {
-        public static final int AgendaContent=0x7f090009;
+        public static final int AgendaContent=0x7f09000a;
+        public static final int AgendaDate=0x7f09000b;
+        public static final int AgendaHead=0x7f090009;
         public static final int AgendaList=0x7f090008;
-        public static final int ContactContent=0x7f09000a;
-        public static final int ContactsList=0x7f09000b;
+        public static final int ContactLocation=0x7f090012;
+        public static final int ContactMail=0x7f09000f;
+        public static final int ContactName=0x7f09000c;
+        public static final int ContactOffice=0x7f090011;
+        public static final int ContactPhone=0x7f090010;
+        public static final int ContactPicture=0x7f09000e;
+        public static final int ContactPosition=0x7f09000d;
+        public static final int ContactsList=0x7f090013;
         public static final int Kindship=0x7f090006;
         public static final int Name=0x7f090005;
-        public static final int NewContent=0x7f09000c;
-        public static final int NewsList=0x7f09000d;
-        public static final int action_settings=0x7f09000e;
+        public static final int NewContent=0x7f090016;
+        public static final int NewHead=0x7f090014;
+        public static final int NewImage=0x7f090015;
+        public static final int NewsList=0x7f090017;
+        public static final int action_settings=0x7f090018;
         public static final int fragment_agenda_content=0x7f090000;
         public static final int fragment_contact_content=0x7f090001;
         public static final int fragment_contacts=0x7f090003;
         public static final int fragment_contacts_content=0x7f090004;
         public static final int fragment_new_content=0x7f090007;
         public static final int realtabcontent=0x7f090002;
-        public static final int search=0x7f09000f;
+        public static final int search=0x7f090019;
     }
     public static final class layout {
         public static final int activity_agenda_content=0x7f030000;
