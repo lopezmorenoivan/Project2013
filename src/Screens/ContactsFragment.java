@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import Logic.User;
+import Model.UsersInstance;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -31,13 +32,19 @@ public class ContactsFragment extends Fragment {
 	
 	private ListView list;
 	private Menu menu;
+	private User userSelected;
 
-	User julien = new User (1, "Julien", "Polizzi", null, 1, "+4511111111", "140E", 1,"pos1" ,"julien.polizzi@gmail.com");
-	User matthieu = new User (2, "Matthieu", "Patin", null, 2, "+4522222222", "140E", 2, "pos2", "matthieu.patin@gmail.com");
-	User daniel = new User (3, "Daniel", "Gutierrez", null, 3, "+4533333333", "140E", 3, "pos3", "daniel.gutierrez@gmail.com");
-	User ivan = new User (4, "Ivan", "Lopez", null, 4, "+4544444444", "140E", 4, "pos4", "ivan.lopez@gmail.com");
+	User julien = new User (1, "Julien", "Polizzi", null, 1,"+4511111111", "140E", 1,
+			"pos1" ,"julien.polizzi@gmail.com","white");
+	User matthieu = new User (2, "Matthieu", "Patin", null, 2, "+4522222222", "140E", 2, 
+			"pos2", "matthieu.patin@gmail.com","white");
+	User daniel = new User (3, "Daniel", "Gutierrez", null, 3, "+4533333333", "140E", 3, 
+			"pos3", "daniel.gutierrez@gmail.com","white");
+	User ivan = new User (4, "Ivan", "Lopez", null, 4, "+4544444444", "140E", 4, 
+			"pos4", "ivan.lopez@gmail.com", "white");
 	
-	ArrayList<User> users = new ArrayList<User>();
+	private UsersInstance usersInstance = UsersInstance.getInstance();
+	private ArrayList<User> users = usersInstance.getUsers();
 	
 	
 	@Override
@@ -53,6 +60,8 @@ public class ContactsFragment extends Fragment {
 	@Override 
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {	
 		inflater.inflate(R.menu.main, menu); 
+		
+		this.menu = menu;
 
 	    //setupSearchView(menu);
 	    
@@ -72,16 +81,36 @@ public class ContactsFragment extends Fragment {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.search_contact: break;
-			case R.id.add_contact: users.add(julien); break;
-			case R.id.remove_contact: break;
-			case R.id.update_contact: break;
-			case R.id.refresh_contact: break;
+			case R.id.add_contact: users.add(julien); usersInstance.setUsers(users); break;
+			case R.id.remove_contact: users.remove(userSelected); usersInstance.setUsers(users); break;
+			case R.id.update_contact: users.remove(userSelected); users.add(julien); usersInstance.setUsers(users); break;
 			default: break;
 		}
 		
+		//update
+		users = usersInstance.getUsers();
+		fromParticularToGeneral();
 		list.invalidateViews();
 		
         return true;
+	}
+	
+	private void fromGeneralToParticular () {
+		menu.findItem(R.id.remove_contact).setVisible(true);
+	    menu.findItem(R.id.update_contact).setVisible(true);
+	    
+	    menu.findItem(R.id.add_contact).setVisible(false);
+	    menu.findItem(R.id.search_contact).setVisible(false);
+	    menu.findItem(R.id.refresh_contact).setVisible(false);
+	}
+	
+	private void fromParticularToGeneral () {
+		menu.findItem(R.id.remove_contact).setVisible(false);
+	    menu.findItem(R.id.update_contact).setVisible(false);
+	    
+	    menu.findItem(R.id.add_contact).setVisible(true);
+	    menu.findItem(R.id.search_contact).setVisible(true);
+	    menu.findItem(R.id.refresh_contact).setVisible(true);
 	}
 	
 	private void setupListView() {
@@ -91,14 +120,11 @@ public class ContactsFragment extends Fragment {
 			@Override
 			public boolean onItemLongClick(AdapterView<?> list, View view,
 					int pos, long id) {
-				menu.findItem(R.id.remove_contact).setVisible(true);
-			    menu.findItem(R.id.update_contact).setVisible(true);
-			    
-			    menu.findItem(R.id.add_contact).setVisible(false);
-			    menu.findItem(R.id.search_contact).setVisible(false);
-			    menu.findItem(R.id.refresh_contact).setVisible(false);
+				fromGeneralToParticular();
 				
-				return false;
+			    userSelected=(User)users.get(pos);
+				
+				return true;
 			}
 		});
 		list.setOnItemClickListener(new OnItemClickListener() {

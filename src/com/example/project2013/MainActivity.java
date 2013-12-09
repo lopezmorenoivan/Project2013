@@ -45,9 +45,9 @@ public class MainActivity extends FragmentActivity {
 	    
 	    mTabHost.addTab(mTabHost.newTabSpec(TAB1).setIndicator("Contacts"),
 	            ContactsFragment.class, null);
-	    mTabHost.addTab(mTabHost.newTabSpec(TAB2).setIndicator("Agenda"),
+	    mTabHost.addTab(mTabHost.newTabSpec(TAB2).setIndicator("AgendaInstance"),
 	            AgendaFragment.class, null);
-	    mTabHost.addTab(mTabHost.newTabSpec(TAB3).setIndicator("News"),
+	    mTabHost.addTab(mTabHost.newTabSpec(TAB3).setIndicator("NewsInstance"),
 	            NewsFragment.class, null);
 	    
 	    mTabHost.setCurrentTab(0);

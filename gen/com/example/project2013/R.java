@@ -64,23 +64,35 @@ public final class R {
         public static final int update_contact=0x7f0a001a;
     }
     public static final class layout {
-        public static final int activity_agenda_content=0x7f030000;
-        public static final int activity_contact_content=0x7f030001;
-        public static final int activity_main=0x7f030002;
-        public static final int activity_new_content=0x7f030003;
-        public static final int fragment_agenda=0x7f030004;
-        public static final int fragment_agenda_content=0x7f030005;
-        public static final int fragment_contact_content=0x7f030006;
-        public static final int fragment_contacts=0x7f030007;
-        public static final int fragment_new_content=0x7f030008;
-        public static final int fragment_news=0x7f030009;
-        public static final int list_view=0x7f03000a;
+        public static final int activity_add_contact=0x7f030000;
+        public static final int activity_add_new=0x7f030001;
+        public static final int activity_agenda_content=0x7f030002;
+        public static final int activity_contact_content=0x7f030003;
+        public static final int activity_main=0x7f030004;
+        public static final int activity_modify_contact=0x7f030005;
+        public static final int activity_new_content=0x7f030006;
+        public static final int activity_new_task=0x7f030007;
+        public static final int activity_update_new=0x7f030008;
+        public static final int activity_update_task=0x7f030009;
+        public static final int fragment_agenda=0x7f03000a;
+        public static final int fragment_agenda_content=0x7f03000b;
+        public static final int fragment_contact_content=0x7f03000c;
+        public static final int fragment_contacts=0x7f03000d;
+        public static final int fragment_new_content=0x7f03000e;
+        public static final int fragment_news=0x7f03000f;
+        public static final int list_view=0x7f030010;
     }
     public static final class menu {
-        public static final int agenda_content=0x7f090000;
-        public static final int contact_content=0x7f090001;
-        public static final int main=0x7f090002;
-        public static final int new_content=0x7f090003;
+        public static final int add_contact=0x7f090000;
+        public static final int add_new=0x7f090001;
+        public static final int agenda_content=0x7f090002;
+        public static final int contact_content=0x7f090003;
+        public static final int main=0x7f090004;
+        public static final int modify_contact=0x7f090005;
+        public static final int new_content=0x7f090006;
+        public static final int new_task=0x7f090007;
+        public static final int update_new=0x7f090008;
+        public static final int update_task=0x7f090009;
     }
     public static final class string {
         public static final int AddTitle=0x7f07000c;
@@ -98,8 +110,14 @@ public final class R {
         public static final int tab1=0x7f070009;
         public static final int tab2=0x7f07000a;
         public static final int tab3=0x7f07000b;
+        public static final int title_activity_add_contact=0x7f070011;
+        public static final int title_activity_add_new=0x7f070015;
         public static final int title_activity_agenda_content=0x7f070007;
+        public static final int title_activity_modify_contact=0x7f070012;
         public static final int title_activity_new_content=0x7f070005;
+        public static final int title_activity_new_task=0x7f070013;
+        public static final int title_activity_update_new=0x7f070016;
+        public static final int title_activity_update_task=0x7f070014;
     }
     public static final class style {
         /** 

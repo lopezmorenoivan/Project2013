@@ -16,9 +16,12 @@ public class User implements Serializable {
 	private String position;
 	private String mail;
 	
+	//this field is hear due to the DB necessities :(
+	private String password;
+	
 	public User(int id, String name, String surname, Bitmap picture,
 			int privileges, String phone, String office, int location,
-			String position, String mail) {
+			String position, String mail, String password) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -30,6 +33,7 @@ public class User implements Serializable {
 		this.location = location;
 		this.position = position;
 		this.mail = mail;
+		this.password = password;
 	}
 	
 	public int getID() {
@@ -92,12 +96,19 @@ public class User implements Serializable {
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	
 	@Override
 	public String toString() {
 		return "User [ID=" + id + ", name=" + name + ", surname=" + surname
 				+ ", privileges=" + privileges + ", phone=" + phone
 				+ ", office=" + office + ", location=" + location
-				+ ", position=" + position + ", mail=" + mail + "]";
+				+ ", position=" + position + ", mail=" + mail +
+				", password=" + password + "]";
 	}
 }

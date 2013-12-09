@@ -18,5 +18,11 @@
     <string name="UpdateTitle">update</string>
     <string name="RefreshTitle">refresh</string>
     <string name="SearchTitle">search</string>
+    <string name="title_activity_add_contact">AddContact</string>
+    <string name="title_activity_modify_contact">ModifyContactActivity</string>
+    <string name="title_activity_new_task">NewTaskActivity</string>
+    <string name="title_activity_update_task">UpdateTaskActivity</string>
+    <string name="title_activity_add_new">AddNewActivity</string>
+    <string name="title_activity_update_new">UpdateNewActivity</string>
 
 </resources>
