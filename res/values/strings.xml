@@ -14,5 +14,6 @@
     <string name="tab1">Contacts</string>
     <string name="tab2">Agenda</string>
     <string name="tab3">News</string>
+    <string name="AddTitle">title</string>
 
 </resources>

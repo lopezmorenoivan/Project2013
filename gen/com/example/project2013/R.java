@@ -24,8 +24,10 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int ic_search=0x7f020001;
+        public static final int ic_add=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
+        public static final int ic_prueba=0x7f020002;
+        public static final int ic_search=0x7f020003;
     }
     public static final class id {
         public static final int AgendaContent=0x7f0a0007;
@@ -47,11 +49,12 @@ public final class R {
         public static final int NewsList=0x7f0a0014;
         public static final int SecondLabel=0x7f0a0016;
         public static final int action_settings=0x7f0a0017;
+        public static final int add_contact=0x7f0a0018;
         public static final int fragment_agenda_content=0x7f0a0000;
         public static final int fragment_contact_content=0x7f0a0001;
         public static final int fragment_new_content=0x7f0a0004;
         public static final int realtabcontent=0x7f0a0002;
-        public static final int search=0x7f0a0018;
+        public static final int search_contact=0x7f0a0019;
         public static final int tabletrealtabcontent=0x7f0a0003;
     }
     public static final class layout {
@@ -74,6 +77,7 @@ public final class R {
         public static final int new_content=0x7f090003;
     }
     public static final class string {
+        public static final int AddTitle=0x7f07000d;
         public static final int SearchTitle=0x7f070004;
         public static final int action_settings=0x7f070007;
         public static final int app_name=0x7f070000;

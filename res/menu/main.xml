@@ -1,12 +1,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <item android:id="@+id/search"
-          android:title="@string/SearchTitle"
-          android:icon="@drawable/ic_search"
-          android:showAsAction="collapseActionView|ifRoom"
-          android:actionViewClass="android.support.v7.widget.SearchView" />
-    
-    <item android:id="@+id/action_settings"
-          android:title="@string/action_settings"
-          android:showAsAction="never" />
+    <item
+        android:id="@+id/add_contact"
+        android:icon="@drawable/ic_add"
+        android:showAsAction="collapseActionView|ifRoom"
+        android:title="@string/AddTitle"/>
+
+    <item
+        android:id="@+id/search_contact"
+        android:actionViewClass="android.support.v7.widget.SearchView"
+        android:icon="@drawable/ic_search"
+        android:showAsAction="collapseActionView|ifRoom"
+        android:title="@string/SearchTitle"/>
+
 </menu>

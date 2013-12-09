@@ -95,7 +95,7 @@ public class ContactsFragment extends Fragment {
 	private void setupSearchView(Menu menu) {
 		Log.v("5","5");
 		android.support.v7.widget.SearchView searchView = 
-				(android.support.v7.widget.SearchView)menu.findItem(R.id.search).getActionView();
+				(android.support.v7.widget.SearchView)menu.findItem(R.id.search_contact).getActionView();
 		Log.v("6","6");
 	    searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {       
 		    @Override
