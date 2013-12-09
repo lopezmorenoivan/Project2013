@@ -27,7 +27,10 @@ public final class R {
         public static final int ic_add=0x7f020000;
         public static final int ic_launcher=0x7f020001;
         public static final int ic_prueba=0x7f020002;
-        public static final int ic_search=0x7f020003;
+        public static final int ic_refresh=0x7f020003;
+        public static final int ic_remove=0x7f020004;
+        public static final int ic_search=0x7f020005;
+        public static final int ic_update=0x7f020006;
     }
     public static final class id {
         public static final int AgendaContent=0x7f0a0007;
@@ -54,8 +57,11 @@ public final class R {
         public static final int fragment_contact_content=0x7f0a0001;
         public static final int fragment_new_content=0x7f0a0004;
         public static final int realtabcontent=0x7f0a0002;
-        public static final int search_contact=0x7f0a0019;
+        public static final int refresh_contact=0x7f0a001b;
+        public static final int remove_contact=0x7f0a0019;
+        public static final int search_contact=0x7f0a001c;
         public static final int tabletrealtabcontent=0x7f0a0003;
+        public static final int update_contact=0x7f0a001a;
     }
     public static final class layout {
         public static final int activity_agenda_content=0x7f030000;
@@ -77,20 +83,23 @@ public final class R {
         public static final int new_content=0x7f090003;
     }
     public static final class string {
-        public static final int AddTitle=0x7f07000d;
-        public static final int SearchTitle=0x7f070004;
-        public static final int action_settings=0x7f070007;
+        public static final int AddTitle=0x7f07000c;
+        public static final int RefreshTitle=0x7f07000f;
+        public static final int RemoveTitle=0x7f07000d;
+        public static final int SearchTitle=0x7f070010;
+        public static final int UpdateTitle=0x7f07000e;
+        public static final int action_settings=0x7f070006;
         public static final int app_name=0x7f070000;
-        public static final int hello_blank_fragment=0x7f070005;
+        public static final int hello_blank_fragment=0x7f070004;
         public static final int hello_world=0x7f070001;
         public static final int menu_message=0x7f070003;
         public static final int menu_settings=0x7f070002;
-        public static final int name_shown=0x7f070009;
-        public static final int tab1=0x7f07000a;
-        public static final int tab2=0x7f07000b;
-        public static final int tab3=0x7f07000c;
-        public static final int title_activity_agenda_content=0x7f070008;
-        public static final int title_activity_new_content=0x7f070006;
+        public static final int name_shown=0x7f070008;
+        public static final int tab1=0x7f070009;
+        public static final int tab2=0x7f07000a;
+        public static final int tab3=0x7f07000b;
+        public static final int title_activity_agenda_content=0x7f070007;
+        public static final int title_activity_new_content=0x7f070005;
     }
     public static final class style {
         /** 

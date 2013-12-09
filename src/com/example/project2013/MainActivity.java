@@ -25,37 +25,17 @@ public class MainActivity extends FragmentActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		Log.v("what the fuck","1");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
 		setupTabs();
-		
-		setupSearch();
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		Log.v("1","menu");
 		getMenuInflater().inflate(R.menu.main, menu);
 
 		return true;
-	}
-	
-	private void setupSearch() {
-		// Get the intent, verify the action and get the query
-		Log.v("2","menu");
-	    Intent intent = getIntent();
-	    if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-	    
-	      String query = intent.getStringExtra(SearchManager.QUERY);
-	      doMySearch(query);
-	    }
-	}
-	
-	private void doMySearch(String query) {
-		Log.v("search","pues es cierto que busca");
 	}
 	
 	private void setupTabs() {
