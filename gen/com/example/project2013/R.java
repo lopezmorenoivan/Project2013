@@ -69,8 +69,9 @@ public final class R {
     }
     public static final class menu {
         public static final int agenda_content=0x7f090000;
-        public static final int main=0x7f090001;
-        public static final int new_content=0x7f090002;
+        public static final int contact_content=0x7f090001;
+        public static final int main=0x7f090002;
+        public static final int new_content=0x7f090003;
     }
     public static final class string {
         public static final int SearchTitle=0x7f070004;

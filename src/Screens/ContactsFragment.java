@@ -3,12 +3,16 @@ package Screens;
 import java.io.Serializable;
 
 import Logic.User;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -20,6 +24,7 @@ import android.widget.TextView;
 import com.example.project2013.ContactContentActivity;
 import com.example.project2013.R;
 
+@SuppressLint("NewApi")
 public class ContactsFragment extends Fragment {
 	
 	private ListView list;
@@ -42,6 +47,12 @@ public class ContactsFragment extends Fragment {
 	public void onActivityCreated(Bundle state) {
 		super.onActivityCreated(state);
 		
+		setHasOptionsMenu(true);
+		
+		setupListView();
+	}
+	
+	private void setupListView() {
 		list = (ListView)getView().findViewById(R.id.ContactsList);
 		list.setAdapter(new AdapterUsers(this));
 		list.setOnItemClickListener(new OnItemClickListener() {
@@ -70,6 +81,37 @@ public class ContactsFragment extends Fragment {
 		});
 	}
 	
+	@Override 
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+	    inflater.inflate(R.menu.main, menu); 
+	    
+	    Log.v("3","3");
+	    
+	    //setupSearchView(menu);
+	    
+	    Log.v("4","4");
+	}
+	
+	private void setupSearchView(Menu menu) {
+		Log.v("5","5");
+		android.support.v7.widget.SearchView searchView = 
+				(android.support.v7.widget.SearchView)menu.findItem(R.id.search).getActionView();
+		Log.v("6","6");
+	    searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {       
+		    @Override
+		    public boolean onQueryTextChange(String newText) {
+		        Log.v("search","the search is near");
+		        return false;
+		    }
+
+		    @Override
+		    public boolean onQueryTextSubmit(String query) {            
+		        Log.v("search","dunno");
+		        return false;
+		    }
+		});
+	}
+	
 	class AdapterUsers extends ArrayAdapter<User> {
     	
     	Activity context;
@@ -84,7 +126,7 @@ public class ContactsFragment extends Fragment {
 			View item = inflater.inflate(R.layout.list_view, null);
 			
 			TextView name = (TextView)item.findViewById(R.id.FirstLabel);
-			name.setText(users[position].getName());
+			name.setText(users[position].getName() + " " + users[position].getSurname());
 			
 			TextView kindship = (TextView)item.findViewById(R.id.SecondLabel);
 			kindship.setText(users[position].getPosition());
