@@ -1,4 +1,4 @@
-package Logic;
+package com.example.Logic;
 
 public class Company {
 	private String name;

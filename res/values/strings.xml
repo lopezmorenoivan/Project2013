@@ -24,5 +24,14 @@
     <string name="title_activity_update_task">UpdateTaskActivity</string>
     <string name="title_activity_add_new">AddNewActivity</string>
     <string name="title_activity_update_new">UpdateNewActivity</string>
+    <string name="add_contact_mail">Mail</string>
+    <string name="add_contact_name">Name</string>
+    <string name="add_contact_surname">Surname</string>
+    <string name="add_contact_office">Office</string>
+    <string name="add_contact_password">Password</string>
+    <string name="add_contact_phone">Phone</string>
+    <string name="add_contact_position">Position</string>
+    <string name="add_contact_privileges">Privileges</string>
 
+    
 </resources>

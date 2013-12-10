@@ -1,10 +1,9 @@
-package Screens;
+package com.example.Screens;
 
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-import Logic.Task;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.Logic.Task;
 import com.example.project2013.AgendaContentActivity;
 import com.example.project2013.R;
 

@@ -1,11 +1,12 @@
 package com.example.project2013;
 
-import Screens.AgendaContentFragment;
-import Screens.AgendaFragment;
-import Screens.ContactContentFragment;
-import Screens.ContactsFragment;
-import Screens.NewContentFragment;
-import Screens.NewsFragment;
+import com.example.Screens.AgendaContentFragment;
+import com.example.Screens.AgendaFragment;
+import com.example.Screens.ContactContentFragment;
+import com.example.Screens.ContactsFragment;
+import com.example.Screens.NewContentFragment;
+import com.example.Screens.NewsFragment;
+
 import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
@@ -45,9 +46,9 @@ public class MainActivity extends FragmentActivity {
 	    
 	    mTabHost.addTab(mTabHost.newTabSpec(TAB1).setIndicator("Contacts"),
 	            ContactsFragment.class, null);
-	    mTabHost.addTab(mTabHost.newTabSpec(TAB2).setIndicator("AgendaInstance"),
+	    mTabHost.addTab(mTabHost.newTabSpec(TAB2).setIndicator("Agenda"),
 	            AgendaFragment.class, null);
-	    mTabHost.addTab(mTabHost.newTabSpec(TAB3).setIndicator("NewsInstance"),
+	    mTabHost.addTab(mTabHost.newTabSpec(TAB3).setIndicator("News"),
 	            NewsFragment.class, null);
 	    
 	    mTabHost.setCurrentTab(0);

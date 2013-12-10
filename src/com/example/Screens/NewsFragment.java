@@ -1,10 +1,8 @@
-package Screens;
+package com.example.Screens;
 
 import java.io.File;
 import java.io.Serializable;
 
-import Logic.New;
-import Screens.ContactsFragment.AdapterUsers;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -21,6 +19,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.Logic.New;
+import com.example.Screens.ContactsFragment.AdapterUsers;
 import com.example.project2013.ContactContentActivity;
 import com.example.project2013.NewContentActivity;
 import com.example.project2013.R;

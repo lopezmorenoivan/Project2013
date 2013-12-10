@@ -1,6 +1,5 @@
-package Screens;
+package com.example.Screens;
 
-import Logic.User;
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -15,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.Logic.User;
 import com.example.project2013.R;
 
 @SuppressLint("NewApi")

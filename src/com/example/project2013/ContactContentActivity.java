@@ -2,8 +2,9 @@ package com.example.project2013;
 
 import java.io.Serializable;
 
-import Logic.User;
-import Screens.ContactContentFragment;
+import com.example.Logic.User;
+import com.example.Screens.ContactContentFragment;
+
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;

@@ -1,8 +1,10 @@
-package Model;
+package com.example.Model;
 
 import java.util.ArrayList;
+
+import com.example.Logic.Task;
+
 import android.app.Application;
-import Logic.Task;
 
 public class AgendaInstance extends Application {
 	private static AgendaInstance INSTANCE = null;

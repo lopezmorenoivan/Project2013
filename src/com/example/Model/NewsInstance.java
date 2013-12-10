@@ -1,8 +1,10 @@
-package Model;
+package com.example.Model;
 
 import java.util.ArrayList;
+
+import com.example.Logic.New;
+
 import android.app.Application;
-import Logic.New;
 
 public class NewsInstance extends Application {
 	private static NewsInstance INSTANCE = null;

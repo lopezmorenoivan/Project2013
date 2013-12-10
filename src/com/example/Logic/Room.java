@@ -1,4 +1,4 @@
-package Logic;
+package com.example.Logic;
 
 import android.graphics.Bitmap;
 

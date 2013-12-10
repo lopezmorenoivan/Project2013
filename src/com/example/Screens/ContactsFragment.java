@@ -1,10 +1,8 @@
-package Screens;
+package com.example.Screens;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import Logic.User;
-import Model.UsersInstance;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -24,6 +22,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.Logic.User;
+import com.example.Model.UsersInstance;
+import com.example.project2013.AddContactActivity;
 import com.example.project2013.ContactContentActivity;
 import com.example.project2013.R;
 
@@ -81,7 +82,7 @@ public class ContactsFragment extends Fragment {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.search_contact: break;
-			case R.id.add_contact: users.add(julien); usersInstance.setUsers(users); break;
+			case R.id.add_contact: add(); break;
 			case R.id.remove_contact: users.remove(userSelected); usersInstance.setUsers(users); break;
 			case R.id.update_contact: users.remove(userSelected); users.add(julien); usersInstance.setUsers(users); break;
 			default: break;
@@ -93,6 +94,11 @@ public class ContactsFragment extends Fragment {
 		list.invalidateViews();
 		
         return true;
+	}
+	
+	private void add() {
+		Intent i = new Intent (getActivity().getApplicationContext(), AddContactActivity.class);
+		startActivity(i);
 	}
 	
 	private void fromGeneralToParticular () {

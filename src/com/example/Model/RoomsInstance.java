@@ -1,8 +1,10 @@
-package Model;
+package com.example.Model;
 
 import java.util.ArrayList;
+
+import com.example.Logic.Room;
+
 import android.app.Application;
-import Logic.Room;
 
 public class RoomsInstance extends Application {
 	private static RoomsInstance INSTANCE = null;

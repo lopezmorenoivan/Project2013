@@ -1,7 +1,8 @@
 package com.example.project2013;
 
-import Logic.New;
-import Screens.NewContentFragment;
+import com.example.Logic.New;
+import com.example.Screens.NewContentFragment;
+
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 

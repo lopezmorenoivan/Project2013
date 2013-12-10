@@ -1,4 +1,4 @@
-package Screens;
+package com.example.Screens;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;

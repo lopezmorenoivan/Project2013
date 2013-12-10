@@ -1,10 +1,10 @@
 package com.example.project2013;
 
-import Logic.Task;
-import Screens.AgendaContentFragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
+import com.example.Logic.Task;
+import com.example.Screens.AgendaContentFragment;
 import com.example.project2013.R;
 
 public class AgendaContentActivity extends FragmentActivity {

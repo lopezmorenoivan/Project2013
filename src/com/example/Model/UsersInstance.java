@@ -1,8 +1,10 @@
-package Model;
+package com.example.Model;
 
 import java.util.ArrayList;
+
+import com.example.Logic.User;
+
 import android.app.Application;
-import Logic.User;
 
 public class UsersInstance extends Application {
 	private static UsersInstance INSTANCE = null;
