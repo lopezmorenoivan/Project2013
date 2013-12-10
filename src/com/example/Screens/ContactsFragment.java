@@ -37,13 +37,13 @@ public class ContactsFragment extends Fragment {
 	private User userSelected;
 
 	User julien = new User ("Julien", "Polizzi", null, 1,"+4511111111", "140E", 1,
-			"pos1" ,"julien.polizzi@gmail.com","white");
+			"pos1" ,"julien.polizzi@gmail.com","");
 	User matthieu = new User ("Matthieu", "Patin", null, 2, "+4522222222", "140E", 2, 
-			"pos2", "matthieu.patin@gmail.com","white");
+			"pos2", "matthieu.patin@gmail.com","");
 	User daniel = new User ("Daniel", "Gutierrez", null, 3, "+4533333333", "140E", 3, 
-			"pos3", "daniel.gutierrez@gmail.com","white");
+			"pos3", "daniel.gutierrez@gmail.com","");
 	User ivan = new User ("Ivan", "Lopez", null, 4, "+4544444444", "140E", 4, 
-			"pos4", "ivan.lopez@gmail.com", "white");
+			"pos4", "ivan.lopez@gmail.com","");
 	
 	private UsersInstance usersInstance = UsersInstance.getInstance();
 	private ArrayList<User> users = usersInstance.getUsers();

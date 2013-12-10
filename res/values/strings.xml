@@ -18,6 +18,7 @@
     <string name="UpdateTitle">update</string>
     <string name="RefreshTitle">refresh</string>
     <string name="SearchTitle">search</string>
+    <string name="accept_title">accept</string>
     <string name="title_activity_add_contact">Add Contact</string>
     <string name="title_activity_modify_contact">Update Contact</string>
     <string name="title_activity_new_task">Add Task</string>

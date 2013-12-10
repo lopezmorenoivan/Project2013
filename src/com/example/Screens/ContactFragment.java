@@ -1,5 +1,7 @@
 package com.example.Screens;
 
+import java.util.ArrayList;
+
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -13,19 +15,26 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.Logic.Task;
 import com.example.Logic.User;
 import com.example.Model.UsersInstance;
 import com.example.project2013.R;
+import com.example.project2013.UpdateContactActivity;
 
 @SuppressLint("NewApi")
 public class ContactFragment extends Fragment {
+	private ArrayList<User> users = UsersInstance.getInstance().getUsers();
+	private User past; 
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, 
 			                 ViewGroup container, 
 			                 Bundle savedInstanceState) {
-		
-		
+		/*
+		if (getActivity().getClass().equals(UpdateContactActivity.class)){
+			past = (User) savedInstanceState.getSerializable("contact");
+		}
+		*/
 		getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		return inflater.inflate(R.layout.fragment_contact, container, false);
@@ -40,7 +49,22 @@ public class ContactFragment extends Fragment {
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
+		if(item.getItemId()!=android.R.id.home) {
+			if (past!=null) {
+				User future = getUser();
+				future.setLocation(past.getLocation());
+				future.setID(past.getID());
+				future.setPassword(past.getPassword());
+				
+				users.set(users.indexOf(past),future);
+				UsersInstance.setUsers(users);
+			} else {
+				users.add(getUser());
+			} 
+		}
+		
 		NavUtils.navigateUpFromSameTask(this.getActivity());
+		
         return true;
 	}
 	
@@ -105,7 +129,7 @@ public class ContactFragment extends Fragment {
 		//image.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_menu_help));
 	}
 	
-	public User getUser (User past) {
+	public User getUser () {
 		TextView name = (TextView)getView().findViewById(R.id.contact_name);
 		TextView surname = (TextView)getView().findViewById(R.id.contact_surname);
 		TextView position = (TextView)getView().findViewById(R.id.contact_position);
@@ -118,8 +142,8 @@ public class ContactFragment extends Fragment {
 		
 		return new User (name.getText().toString(), surname.getText().toString(),
 				image.getDrawingCache(), Integer.valueOf(privileges.getText().toString()), 
-				phone.getText().toString(), office.getText().toString(), past.getLocation(),
-				position.getText().toString(), mail.getText().toString(), past.getPassword());
+				phone.getText().toString(), office.getText().toString(),0,
+				position.getText().toString(), mail.getText().toString(),"");
 		
 	}
 }
