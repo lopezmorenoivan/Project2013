@@ -51,7 +51,7 @@ public class MainActivity extends FragmentActivity {
 	    mTabHost.addTab(mTabHost.newTabSpec(TAB3).setIndicator("News"),
 	            NewsFragment.class, null);
 	    
-	    mTabHost.setCurrentTab(0);
+	    mTabHost.setCurrentTab(currentTab);
 	    final boolean isTablet = getResources().getBoolean(R.bool.isTablet);
 	    if (isTablet) {
 	    	ContactContentFragment contact = new ContactContentFragment();
