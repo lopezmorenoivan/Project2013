@@ -43,35 +43,83 @@
         </activity>
         <activity
             android:name="com.example.project2013.NewContentActivity"
-            android:label="@string/name_shown" >
+            android:label="@string/name_shown"
+            android:parentActivityName="com.example.project2013.MainActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.project2013.MainActivity" />
         </activity>
         <activity
             android:name="com.example.project2013.AgendaContentActivity"
-            android:label="@string/name_shown" >
+            android:label="@string/name_shown" 
+            android:parentActivityName="com.example.project2013.MainActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.project2013.MainActivity" />
         </activity>
         <activity
             android:name="com.example.project2013.AddContactActivity"
-            android:label="@string/title_activity_add_contact" >
+            android:label="@string/title_activity_add_contact"
+            android:parentActivityName="com.example.project2013.MainActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.project2013.MainActivity" />
         </activity>
         <activity
             android:name="com.example.project2013.UpdateContactActivity"
-            android:label="@string/title_activity_modify_contact" >
+            android:label="@string/title_activity_modify_contact"
+            android:parentActivityName="com.example.project2013.MainActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.project2013.MainActivity" />
         </activity>
         <activity
             android:name="com.example.project2013.AddTaskActivity"
-            android:label="@string/title_activity_new_task" >
+            android:label="@string/title_activity_new_task"
+            android:parentActivityName="com.example.project2013.MainActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.project2013.MainActivity" />
         </activity>
         <activity
             android:name="com.example.project2013.UpdateTaskActivity"
-            android:label="@string/title_activity_update_task" >
+            android:label="@string/title_activity_update_task"
+            android:parentActivityName="com.example.project2013.MainActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.project2013.MainActivity" />
         </activity>
         <activity
             android:name="com.example.project2013.AddNewActivity"
-            android:label="@string/title_activity_add_new" >
+            android:label="@string/title_activity_add_new"
+            android:parentActivityName="com.example.project2013.MainActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.project2013.MainActivity" />
         </activity>
         <activity
             android:name="com.example.project2013.UpdateNewActivity"
-            android:label="@string/title_activity_update_new" >
+            android:label="@string/title_activity_update_new"
+            android:parentActivityName="com.example.project2013.MainActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.project2013.MainActivity" />
         </activity>
     </application>
 
