@@ -27,6 +27,7 @@ import com.example.Model.UsersInstance;
 import com.example.project2013.AddContactActivity;
 import com.example.project2013.ContactContentActivity;
 import com.example.project2013.R;
+import com.example.project2013.UpdateContactActivity;
 
 @SuppressLint("NewApi")
 public class ContactsFragment extends Fragment {
@@ -35,13 +36,13 @@ public class ContactsFragment extends Fragment {
 	private Menu menu;
 	private User userSelected;
 
-	User julien = new User (1, "Julien", "Polizzi", null, 1,"+4511111111", "140E", 1,
+	User julien = new User ("Julien", "Polizzi", null, 1,"+4511111111", "140E", 1,
 			"pos1" ,"julien.polizzi@gmail.com","white");
-	User matthieu = new User (2, "Matthieu", "Patin", null, 2, "+4522222222", "140E", 2, 
+	User matthieu = new User ("Matthieu", "Patin", null, 2, "+4522222222", "140E", 2, 
 			"pos2", "matthieu.patin@gmail.com","white");
-	User daniel = new User (3, "Daniel", "Gutierrez", null, 3, "+4533333333", "140E", 3, 
+	User daniel = new User ("Daniel", "Gutierrez", null, 3, "+4533333333", "140E", 3, 
 			"pos3", "daniel.gutierrez@gmail.com","white");
-	User ivan = new User (4, "Ivan", "Lopez", null, 4, "+4544444444", "140E", 4, 
+	User ivan = new User ("Ivan", "Lopez", null, 4, "+4544444444", "140E", 4, 
 			"pos4", "ivan.lopez@gmail.com", "white");
 	
 	private UsersInstance usersInstance = UsersInstance.getInstance();
@@ -83,8 +84,8 @@ public class ContactsFragment extends Fragment {
 		switch (item.getItemId()) {
 			case R.id.search: break;
 			case R.id.add: add(); break;
-			case R.id.remove: users.remove(userSelected); usersInstance.setUsers(users); break;
-			case R.id.update: users.remove(userSelected); users.add(julien); usersInstance.setUsers(users); break;
+			case R.id.remove: users.remove(userSelected); break;
+			case R.id.update: update(); break;
 			default: break;
 		}
 		
@@ -93,11 +94,23 @@ public class ContactsFragment extends Fragment {
 		fromParticularToGeneral();
 		list.invalidateViews();
 		
+		userSelected = null;
+		
         return true;
 	}
 	
 	private void add() {
+		users.add(julien);
 		Intent i = new Intent (getActivity().getApplicationContext(), AddContactActivity.class);
+		startActivity(i);
+	}
+	
+	private void update () {
+		Intent i = new Intent (getActivity().getApplicationContext(), UpdateContactActivity.class);
+		Bundle bundle = new Bundle();  
+		bundle.putSerializable("contact", (Serializable) userSelected);
+		i.putExtras(bundle);
+
 		startActivity(i);
 	}
 	

@@ -12,9 +12,6 @@ public class AddNewActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_new);
-		
-		NewFragment fragment = (NewFragment)getSupportFragmentManager()
-					.findFragmentById(R.id.fragment_new);
 	}
 
 }

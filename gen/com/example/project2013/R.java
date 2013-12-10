@@ -24,43 +24,44 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int ic_add=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int ic_prueba=0x7f020002;
-        public static final int ic_refresh=0x7f020003;
-        public static final int ic_remove=0x7f020004;
-        public static final int ic_search=0x7f020005;
-        public static final int ic_update=0x7f020006;
+        public static final int ic_accept=0x7f020000;
+        public static final int ic_add=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int ic_prueba=0x7f020003;
+        public static final int ic_refresh=0x7f020004;
+        public static final int ic_remove=0x7f020005;
+        public static final int ic_search=0x7f020006;
+        public static final int ic_update=0x7f020007;
     }
     public static final class id {
         public static final int AgendaContent=0x7f0a000a;
         public static final int AgendaDate=0x7f0a000b;
         public static final int AgendaHead=0x7f0a0009;
         public static final int AgendaList=0x7f0a0008;
-        public static final int ContactLocation=0x7f0a0022;
-        public static final int ContactMail=0x7f0a001f;
-        public static final int ContactName=0x7f0a001c;
-        public static final int ContactOffice=0x7f0a0021;
-        public static final int ContactPhone=0x7f0a0020;
-        public static final int ContactPicture=0x7f0a001e;
-        public static final int ContactPosition=0x7f0a001d;
-        public static final int ContactsList=0x7f0a0023;
-        public static final int FirstLabel=0x7f0a002f;
-        public static final int NewContent=0x7f0a0029;
-        public static final int NewHead=0x7f0a0027;
-        public static final int NewImage=0x7f0a0028;
-        public static final int NewsList=0x7f0a002a;
-        public static final int SecondLabel=0x7f0a0030;
-        public static final int action_settings=0x7f0a0036;
-        public static final int add=0x7f0a0037;
-        public static final int add_new=0x7f0a0031;
-        public static final int contact_mail=0x7f0a0011;
+        public static final int ContactLocation=0x7f0a0023;
+        public static final int ContactMail=0x7f0a0020;
+        public static final int ContactName=0x7f0a001d;
+        public static final int ContactOffice=0x7f0a0022;
+        public static final int ContactPhone=0x7f0a0021;
+        public static final int ContactPicture=0x7f0a001f;
+        public static final int ContactPosition=0x7f0a001e;
+        public static final int ContactsList=0x7f0a0024;
+        public static final int FirstLabel=0x7f0a0030;
+        public static final int NewContent=0x7f0a002a;
+        public static final int NewHead=0x7f0a0028;
+        public static final int NewImage=0x7f0a0029;
+        public static final int NewsList=0x7f0a002b;
+        public static final int SecondLabel=0x7f0a0031;
+        public static final int action_settings=0x7f0a0033;
+        public static final int add=0x7f0a0034;
+        public static final int contact_mail=0x7f0a0012;
         public static final int contact_name=0x7f0a000d;
-        public static final int contact_office=0x7f0a0013;
-        public static final int contact_password=0x7f0a001b;
-        public static final int contact_phone=0x7f0a0015;
-        public static final int contact_position=0x7f0a0017;
-        public static final int contact_privileges=0x7f0a0019;
+        public static final int contact_office=0x7f0a0014;
+        public static final int contact_password=0x7f0a001c;
+        public static final int contact_phone=0x7f0a0016;
+        public static final int contact_picture=0x7f0a0010;
+        public static final int contact_position=0x7f0a0018;
+        public static final int contact_privileges=0x7f0a001a;
         public static final int contact_surname=0x7f0a000f;
         public static final int fragment_agenda_content=0x7f0a0003;
         public static final int fragment_contact=0x7f0a0000;
@@ -68,31 +69,28 @@ public final class R {
         public static final int fragment_new=0x7f0a0001;
         public static final int fragment_new_content=0x7f0a0007;
         public static final int fragment_task=0x7f0a0002;
-        public static final int new_content=0x7f0a0026;
-        public static final int new_description=0x7f0a0025;
-        public static final int new_title=0x7f0a0024;
+        public static final int new_content=0x7f0a0027;
+        public static final int new_description=0x7f0a0026;
+        public static final int new_title=0x7f0a0025;
         public static final int realtabcontent=0x7f0a0005;
-        public static final int refresh=0x7f0a003a;
-        public static final int refresh_new=0x7f0a0034;
-        public static final int remove=0x7f0a0038;
-        public static final int remove_new=0x7f0a0032;
-        public static final int search=0x7f0a003b;
-        public static final int search_new=0x7f0a0035;
+        public static final int refresh=0x7f0a0037;
+        public static final int refresh_new=0x7f0a0032;
+        public static final int remove=0x7f0a0035;
+        public static final int search=0x7f0a0038;
         public static final int tabletrealtabcontent=0x7f0a0006;
-        public static final int task_date=0x7f0a002d;
-        public static final int task_description=0x7f0a002c;
-        public static final int task_name=0x7f0a002b;
-        public static final int task_time=0x7f0a002e;
+        public static final int task_date=0x7f0a002e;
+        public static final int task_description=0x7f0a002d;
+        public static final int task_name=0x7f0a002c;
+        public static final int task_time=0x7f0a002f;
         public static final int textView1=0x7f0a000c;
         public static final int textView2=0x7f0a000e;
-        public static final int textView3=0x7f0a0010;
-        public static final int textView4=0x7f0a0012;
-        public static final int textView5=0x7f0a0014;
-        public static final int textView6=0x7f0a0016;
-        public static final int textView7=0x7f0a0018;
-        public static final int textView8=0x7f0a001a;
-        public static final int update=0x7f0a0039;
-        public static final int update_new=0x7f0a0033;
+        public static final int textView3=0x7f0a0011;
+        public static final int textView4=0x7f0a0013;
+        public static final int textView5=0x7f0a0015;
+        public static final int textView6=0x7f0a0017;
+        public static final int textView7=0x7f0a0019;
+        public static final int textView8=0x7f0a001b;
+        public static final int update=0x7f0a0036;
     }
     public static final class layout {
         public static final int activity_add_contact=0x7f030000;
@@ -117,10 +115,9 @@ public final class R {
         public static final int list_view=0x7f030013;
     }
     public static final class menu {
-        public static final int add=0x7f090000;
+        public static final int add_update=0x7f090000;
         public static final int content=0x7f090001;
         public static final int main=0x7f090002;
-        public static final int update=0x7f090003;
     }
     public static final class string {
         public static final int AddTitle=0x7f07000c;

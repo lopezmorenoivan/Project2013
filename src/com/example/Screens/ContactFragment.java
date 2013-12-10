@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.Logic.User;
+import com.example.Model.UsersInstance;
 import com.example.project2013.R;
 
 @SuppressLint("NewApi")
@@ -51,6 +53,12 @@ public class ContactFragment extends Fragment {
 
 		message.setText(text);
 	}
+	
+	public void printSurname(String text) {
+		TextView message = (TextView)getView().findViewById(R.id.contact_surname);
+
+		message.setText(text);
+	}
 
 	public void printPosition(String text) {
 		TextView message = (TextView)getView().findViewById(R.id.contact_position);
@@ -75,11 +83,17 @@ public class ContactFragment extends Fragment {
 
 		message.setText(text);
 	}
+	
+	public void printPrivileges(int number) {
+		TextView message = (TextView)getView().findViewById(R.id.contact_privileges);
+
+		message.setText(String.valueOf(number));
+	}
 
 	public void printPicture (Bitmap picture) {
-		//ImageView image = (ImageView) getView().findViewById(R.id.ContactPicture);
+		ImageView image = (ImageView) getView().findViewById(R.id.contact_picture);
 
-		//image.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_menu_help));
+		image.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_menu_help));
 	}
 
 	public void printLocation (int location) {
@@ -89,5 +103,23 @@ public class ContactFragment extends Fragment {
 		//ImageView image = (ImageView) getView().findViewById(R.id.ContactLocation);
 
 		//image.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_menu_help));
+	}
+	
+	public User getUser (User past) {
+		TextView name = (TextView)getView().findViewById(R.id.contact_name);
+		TextView surname = (TextView)getView().findViewById(R.id.contact_surname);
+		TextView position = (TextView)getView().findViewById(R.id.contact_position);
+		TextView mail = (TextView)getView().findViewById(R.id.contact_mail);
+		TextView phone = (TextView)getView().findViewById(R.id.contact_phone);
+		TextView office = (TextView)getView().findViewById(R.id.contact_office);
+		TextView privileges = (TextView)getView().findViewById(R.id.contact_privileges);
+		ImageView image = (ImageView) getView().findViewById(R.id.contact_picture);
+
+		
+		return new User (name.getText().toString(), surname.getText().toString(),
+				image.getDrawingCache(), Integer.valueOf(privileges.getText().toString()), 
+				phone.getText().toString(), office.getText().toString(), past.getLocation(),
+				position.getText().toString(), mail.getText().toString(), past.getPassword());
+		
 	}
 }

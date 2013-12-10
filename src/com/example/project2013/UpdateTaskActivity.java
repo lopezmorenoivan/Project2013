@@ -14,8 +14,6 @@ public class UpdateTaskActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_update_task);
 		
-		Log.v("task","a");
-		
 		TaskFragment fragment = (TaskFragment)getSupportFragmentManager()
 					.findFragmentById(R.id.fragment_task);
 	}

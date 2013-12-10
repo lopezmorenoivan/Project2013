@@ -19,11 +19,10 @@ public class User implements Serializable {
 	//this field is hear due to the DB necessities :(
 	private String password;
 	
-	public User(int id, String name, String surname, Bitmap picture,
+	public User(String name, String surname, Bitmap picture,
 			int privileges, String phone, String office, int location,
 			String position, String mail, String password) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.surname = surname;
 		this.picture = picture;
