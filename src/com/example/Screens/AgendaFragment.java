@@ -24,10 +24,10 @@ import android.widget.TextView;
 
 import com.example.Logic.Task;
 import com.example.Model.AgendaInstance;
-import com.example.project2013.AddContactActivity;
 import com.example.project2013.AddTaskActivity;
 import com.example.project2013.AgendaContentActivity;
 import com.example.project2013.R;
+import com.example.project2013.UpdateTaskActivity;
 
 public class AgendaFragment extends Fragment {
 	
@@ -81,9 +81,8 @@ public class AgendaFragment extends Fragment {
 		switch (item.getItemId()) {
 			case R.id.search: break;
 			case R.id.add: add(); break;
-			case R.id.remove: agenda.remove(taskSelected); agendaInstance.setAgenda(agenda); break;
-			case R.id.update: agenda.remove(taskSelected); agenda.add(first); 
-			agendaInstance.setAgenda(agenda); break;
+			case R.id.remove: agenda.remove(taskSelected); break;
+			case R.id.update: update(); break;
 			default: break;
 		}
 		
@@ -98,6 +97,15 @@ public class AgendaFragment extends Fragment {
 	private void add() {
 		agenda.add(first);
 		Intent i = new Intent (getActivity().getApplicationContext(), AddTaskActivity.class);
+		startActivity(i);
+	}
+	
+	private void update () {
+		Intent i = new Intent (getActivity().getApplicationContext(), UpdateTaskActivity.class);
+		Bundle bundle = new Bundle();  
+		bundle.putSerializable("task", (Serializable) taskSelected);
+		i.putExtras(bundle);
+
 		startActivity(i);
 	}
 	
@@ -122,6 +130,17 @@ public class AgendaFragment extends Fragment {
 	private void setupListView() {
 		list = (ListView)getView().findViewById(R.id.AgendaList);
 		list.setAdapter(new AdapterTasks(this));
+		list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+			@Override
+			public boolean onItemLongClick(AdapterView<?> list, View view,
+					int pos, long id) {
+				fromGeneralToParticular();
+				
+			    taskSelected=(Task)agenda.get(pos);
+				
+				return true;
+			}
+		});
 		list.setOnItemClickListener(new OnItemClickListener() {
 	
 			@Override

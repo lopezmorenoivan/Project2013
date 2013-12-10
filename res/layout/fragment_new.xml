@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/new_title" />
-
+    
     <EditText
         android:id="@+id/new_title"
         android:layout_width="match_parent"
@@ -20,6 +20,12 @@
         android:ems="10"
         android:inputType="text" >
     </EditText>
+    
+    <ImageView
+        android:id="@+id/new_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher" />
     
     <TextView
         android:id="@+id/textView2"

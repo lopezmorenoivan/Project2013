@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -24,6 +25,7 @@ import com.example.Model.NewsInstance;
 import com.example.project2013.AddNewActivity;
 import com.example.project2013.NewContentActivity;
 import com.example.project2013.R;
+import com.example.project2013.UpdateNewActivity;
 
 public class NewsFragment extends Fragment {
 	
@@ -68,13 +70,11 @@ public class NewsFragment extends Fragment {
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-
 		switch (item.getItemId()) {
 			case R.id.search: break;
 			case R.id.add: add(); break;
-			case R.id.remove: news.remove(newSelected); newsInstance.setNews(news); break;
-			case R.id.update: news.remove(newSelected); news.add(first); 
-			newsInstance.setNews(news); break;
+			case R.id.remove: news.remove(newSelected); break;
+			case R.id.update: update(); break;
 			default: break;
 		}
 		
@@ -83,12 +83,23 @@ public class NewsFragment extends Fragment {
 		fromParticularToGeneral();
 		list.invalidateViews();
 		
-        return true;
+		newSelected = null;
+		
+	    return true;
 	}
 	
 	private void add() {
 		news.add(first);
 		Intent i = new Intent (getActivity().getApplicationContext(), AddNewActivity.class);
+		startActivity(i);
+	}
+	
+	private void update () {
+		Intent i = new Intent (getActivity().getApplicationContext(), UpdateNewActivity.class);
+		Bundle bundle = new Bundle();  
+		bundle.putSerializable("noticia", (Serializable) newSelected);
+		i.putExtras(bundle);
+	
 		startActivity(i);
 	}
 	
@@ -113,6 +124,20 @@ public class NewsFragment extends Fragment {
 	public void setupListView() {
 		list = (ListView)getView().findViewById(R.id.NewsList);
 		list.setAdapter(new AdapterNews(this));
+		
+		Log.v("why","why");
+		
+		list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+			@Override
+			public boolean onItemLongClick(AdapterView<?> list, View view,
+					int pos, long id) {
+				fromGeneralToParticular();
+				
+			    newSelected=(New)news.get(pos);
+				
+				return true;
+			}
+		});
 		list.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> list, View view, int pos, long id) {
