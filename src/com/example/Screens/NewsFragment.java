@@ -1,16 +1,16 @@
 package com.example.Screens;
 
-import java.io.File;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -20,17 +20,16 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.Logic.New;
-import com.example.Screens.ContactsFragment.AdapterUsers;
-import com.example.project2013.ContactContentActivity;
+import com.example.Model.NewsInstance;
+import com.example.project2013.AddNewActivity;
 import com.example.project2013.NewContentActivity;
 import com.example.project2013.R;
 
 public class NewsFragment extends Fragment {
 	
 	private ListView list;
-	
-	File file= new File(android.os.Environment.getRootDirectory(),"Your folder");
-	Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
+	private Menu menu;
+	private New newSelected;
 	
 	New first = new New ("first", "this is the first new", "this is the first description", null);
 	New second = new New ("second", "this is the second new", "this is the second description", null);
@@ -38,20 +37,80 @@ public class NewsFragment extends Fragment {
 	New fourth = new New ("fourth", "this is the fourth new", "this is the fourth description", null);
 	New fifth = new New ("fifth", "this is the fifth new", "this is the fifth description", null);
 	
-	New news [] = {first, second, third, fourth, fifth};
+	private NewsInstance newsInstance = NewsInstance.getInstance();
+	private ArrayList<New> news = newsInstance.getNews();
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, 
 			                 ViewGroup container, 
 			                 Bundle savedInstanceState) {
+		setHasOptionsMenu(true); 
 		
 		return inflater.inflate(R.layout.fragment_news, container, false);
+	}
+	
+	@Override 
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {	
+		inflater.inflate(R.menu.main, menu); 
+		
+		this.menu = menu;
+	    
+	    menu.findItem(R.id.remove).setVisible(false);
+	    menu.findItem(R.id.update).setVisible(false);
 	}
 	
 	@Override
 	public void onActivityCreated(Bundle state) {
 		super.onActivityCreated(state);
 		
+		setupListView();
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+
+		switch (item.getItemId()) {
+			case R.id.search: break;
+			case R.id.add: add(); break;
+			case R.id.remove: news.remove(newSelected); newsInstance.setNews(news); break;
+			case R.id.update: news.remove(newSelected); news.add(first); 
+			newsInstance.setNews(news); break;
+			default: break;
+		}
+		
+		//update
+		news = newsInstance.getNews();
+		fromParticularToGeneral();
+		list.invalidateViews();
+		
+        return true;
+	}
+	
+	private void add() {
+		news.add(first);
+		Intent i = new Intent (getActivity().getApplicationContext(), AddNewActivity.class);
+		startActivity(i);
+	}
+	
+	private void fromGeneralToParticular () {
+		menu.findItem(R.id.remove).setVisible(true);
+	    menu.findItem(R.id.update).setVisible(true);
+	    
+	    menu.findItem(R.id.add).setVisible(false);
+	    menu.findItem(R.id.search).setVisible(false);
+	    menu.findItem(R.id.refresh).setVisible(false);
+	}
+	
+	private void fromParticularToGeneral () {
+		menu.findItem(R.id.remove).setVisible(false);
+	    menu.findItem(R.id.update).setVisible(false);
+	    
+	    menu.findItem(R.id.add).setVisible(true);
+	    menu.findItem(R.id.search).setVisible(true);
+	    menu.findItem(R.id.refresh).setVisible(true);
+	}
+	
+	public void setupListView() {
 		list = (ListView)getView().findViewById(R.id.NewsList);
 		list.setAdapter(new AdapterNews(this));
 		list.setOnItemClickListener(new OnItemClickListener() {
@@ -91,10 +150,10 @@ public class NewsFragment extends Fragment {
 			View item = inflater.inflate(R.layout.list_view, null);
 			
 			TextView name = (TextView)item.findViewById(R.id.FirstLabel);
-			name.setText(news[position].getTitle());
+			name.setText(news.get(position).getTitle());
 			
 			TextView kindship = (TextView)item.findViewById(R.id.SecondLabel);
-			kindship.setText(news[position].getDescription());
+			kindship.setText(news.get(position).getDescription());
 			
 			return(item);
 		}

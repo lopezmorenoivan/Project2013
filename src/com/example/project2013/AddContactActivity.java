@@ -1,13 +1,9 @@
 package com.example.project2013;
 
-import com.example.Logic.Task;
-import com.example.Screens.AddContactFragment;
-import com.example.Screens.AgendaContentFragment;
-
 import android.os.Bundle;
-import android.app.Activity;
 import android.support.v4.app.FragmentActivity;
-import android.view.Menu;
+
+import com.example.Screens.ContactFragment;
 
 public class AddContactActivity extends FragmentActivity {
 
@@ -16,7 +12,7 @@ public class AddContactActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_contact);
 		
-		AddContactFragment fragment = (AddContactFragment)getSupportFragmentManager()
-					.findFragmentById(R.id.fragment_add_contact);
+		ContactFragment fragment = (ContactFragment)getSupportFragmentManager()
+					.findFragmentById(R.id.fragment_contact);
 	}
 }

@@ -16,11 +16,12 @@ public class NewContentActivity extends FragmentActivity {
 		
 		New noticia = (New) getIntent().getExtras().getSerializable("new");
 		
-		NewContentFragment content = (NewContentFragment)getSupportFragmentManager()
+		NewContentFragment fragment = (NewContentFragment)getSupportFragmentManager()
 					.findFragmentById(R.id.fragment_new_content);
 		
-		content.printHead(noticia.getTitle());
-		content.printContent(noticia.getContent());
-		content.printPicture(noticia.getPicture());
+		fragment.printTitle(noticia.getTitle());
+		fragment.printHead(noticia.getTitle());
+		fragment.printContent(noticia.getContent());
+		fragment.printPicture(noticia.getPicture());
 	}
 }

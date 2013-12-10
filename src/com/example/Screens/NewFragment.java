@@ -8,13 +8,13 @@ import android.view.ViewGroup;
 
 import com.example.project2013.R;
 
-public class AddContactFragment extends Fragment {
+public class NewFragment extends Fragment {
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, 
 			                 ViewGroup container, 
 			                 Bundle savedInstanceState) {
 		
-		return inflater.inflate(R.layout.fragment_add_contact, container, false);
+		return inflater.inflate(R.layout.fragment_new, container, false);
 	}
 }

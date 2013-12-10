@@ -1,22 +1,20 @@
 package com.example.project2013;
 
 import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
+import android.support.v4.app.FragmentActivity;
 
-public class AddNewActivity extends Activity {
+import com.example.Screens.NewFragment;
+
+public class AddNewActivity extends FragmentActivity {
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_new);
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.add_new, menu);
-		return true;
+		
+		NewFragment fragment = (NewFragment)getSupportFragmentManager()
+					.findFragmentById(R.id.fragment_new);
 	}
 
 }

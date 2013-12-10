@@ -66,8 +66,8 @@ public class ContactsFragment extends Fragment {
 
 	    //setupSearchView(menu);
 	    
-	    menu.findItem(R.id.remove_contact).setVisible(false);
-	    menu.findItem(R.id.update_contact).setVisible(false);
+	    menu.findItem(R.id.remove).setVisible(false);
+	    menu.findItem(R.id.update).setVisible(false);
 	    
 	    Log.v("4","4");
 	}
@@ -81,10 +81,10 @@ public class ContactsFragment extends Fragment {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-			case R.id.search_contact: break;
-			case R.id.add_contact: add(); break;
-			case R.id.remove_contact: users.remove(userSelected); usersInstance.setUsers(users); break;
-			case R.id.update_contact: users.remove(userSelected); users.add(julien); usersInstance.setUsers(users); break;
+			case R.id.search: break;
+			case R.id.add: add(); break;
+			case R.id.remove: users.remove(userSelected); usersInstance.setUsers(users); break;
+			case R.id.update: users.remove(userSelected); users.add(julien); usersInstance.setUsers(users); break;
 			default: break;
 		}
 		
@@ -102,21 +102,21 @@ public class ContactsFragment extends Fragment {
 	}
 	
 	private void fromGeneralToParticular () {
-		menu.findItem(R.id.remove_contact).setVisible(true);
-	    menu.findItem(R.id.update_contact).setVisible(true);
+		menu.findItem(R.id.remove).setVisible(true);
+	    menu.findItem(R.id.update).setVisible(true);
 	    
-	    menu.findItem(R.id.add_contact).setVisible(false);
-	    menu.findItem(R.id.search_contact).setVisible(false);
-	    menu.findItem(R.id.refresh_contact).setVisible(false);
+	    menu.findItem(R.id.add).setVisible(false);
+	    menu.findItem(R.id.search).setVisible(false);
+	    menu.findItem(R.id.refresh).setVisible(false);
 	}
 	
 	private void fromParticularToGeneral () {
-		menu.findItem(R.id.remove_contact).setVisible(false);
-	    menu.findItem(R.id.update_contact).setVisible(false);
+		menu.findItem(R.id.remove).setVisible(false);
+	    menu.findItem(R.id.update).setVisible(false);
 	    
-	    menu.findItem(R.id.add_contact).setVisible(true);
-	    menu.findItem(R.id.search_contact).setVisible(true);
-	    menu.findItem(R.id.refresh_contact).setVisible(true);
+	    menu.findItem(R.id.add).setVisible(true);
+	    menu.findItem(R.id.search).setVisible(true);
+	    menu.findItem(R.id.refresh).setVisible(true);
 	}
 	
 	private void setupListView() {
@@ -160,7 +160,7 @@ public class ContactsFragment extends Fragment {
 	private void setupSearchView(Menu menu) {
 		Log.v("5","5");
 		android.support.v7.widget.SearchView searchView = 
-				(android.support.v7.widget.SearchView) menu.findItem(R.id.search_contact).getActionView();
+				(android.support.v7.widget.SearchView) menu.findItem(R.id.search).getActionView();
 		Log.v("6","6");
 	    searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {       
 		    @Override

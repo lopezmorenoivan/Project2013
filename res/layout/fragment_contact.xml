@@ -2,45 +2,44 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#FFBBBBBB" >
+    android:orientation="vertical" >
 
  	<TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_contact_name" />
+        android:text="@string/contact_name" />
 
     <EditText
-        android:id="@+id/add_contact_name"
+        android:id="@+id/contact_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text" >
+        android:inputType="textPersonName" >
     </EditText>
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_contact_surname" />
+        android:text="@string/contact_surname" />
 
     <EditText
-        android:id="@+id/add_contact_surname"
+        android:id="@+id/contact_surname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text" >
+        android:inputType="textPersonName" >
     </EditText>
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_contact_mail" />
+        android:text="@string/contact_mail" />
 
     <EditText
-        android:id="@+id/add_contact_mail"
+        android:id="@+id/contact_mail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -51,10 +50,10 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_contact_office" />
+        android:text="@string/contact_office" />
 
     <EditText
-        android:id="@+id/add_contact_office"
+        android:id="@+id/contact_office"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -65,10 +64,10 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_contact_phone" />
+        android:text="@string/contact_phone" />
 
     <EditText
-        android:id="@+id/add_contact_phone"
+        android:id="@+id/contact_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -79,10 +78,10 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_contact_position" />
+        android:text="@string/contact_position" />
 
     <EditText
-        android:id="@+id/add_contact_position"
+        android:id="@+id/contact_position"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -93,10 +92,10 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_contact_privileges" />
+        android:text="@string/contact_privileges" />
 
     <EditText
-        android:id="@+id/add_contact_privileges"
+        android:id="@+id/contact_privileges"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -107,10 +106,10 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_contact_password" />
+        android:text="@string/contact_password" />
 
     <EditText
-        android:id="@+id/add_contact_password"
+        android:id="@+id/contact_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"

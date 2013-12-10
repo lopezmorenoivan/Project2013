@@ -18,20 +18,24 @@
     <string name="UpdateTitle">update</string>
     <string name="RefreshTitle">refresh</string>
     <string name="SearchTitle">search</string>
-    <string name="title_activity_add_contact">AddContact</string>
-    <string name="title_activity_modify_contact">ModifyContactActivity</string>
-    <string name="title_activity_new_task">NewTaskActivity</string>
-    <string name="title_activity_update_task">UpdateTaskActivity</string>
-    <string name="title_activity_add_new">AddNewActivity</string>
-    <string name="title_activity_update_new">UpdateNewActivity</string>
-    <string name="add_contact_mail">Mail</string>
-    <string name="add_contact_name">Name</string>
-    <string name="add_contact_surname">Surname</string>
-    <string name="add_contact_office">Office</string>
-    <string name="add_contact_password">Password</string>
-    <string name="add_contact_phone">Phone</string>
-    <string name="add_contact_position">Position</string>
-    <string name="add_contact_privileges">Privileges</string>
-
+    <string name="title_activity_add_contact">Add Contact</string>
+    <string name="title_activity_modify_contact">Update Contact</string>
+    <string name="title_activity_new_task">Add Task</string>
+    <string name="title_activity_update_task">Update Task</string>
+    <string name="title_activity_add_new">Add New</string>
+    <string name="title_activity_update_new">Update New</string>
+    <string name="contact_mail">Mail</string>
+    <string name="contact_name">Name</string>
+    <string name="contact_surname">Surname</string>
+    <string name="contact_office">Office</string>
+    <string name="contact_password">Password</string>
+    <string name="contact_phone">Phone</string>
+    <string name="contact_position">Position</string>
+    <string name="contact_privileges">Privileges</string>
+    <string name="task_name">Name</string>
+    <string name="task_description">Description</string>
+    <string name="new_title">Title</string>
+    <string name="new_description">Description</string>
+    <string name="new_content">Content</string>
     
 </resources>

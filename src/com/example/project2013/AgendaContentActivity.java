@@ -19,6 +19,7 @@ public class AgendaContentActivity extends FragmentActivity {
 					.findFragmentById(R.id.fragment_agenda_content);
 		Task task = (Task) getIntent().getExtras().getSerializable("task");
 		
+		fragment.printTitle(task.getName());
 		fragment.printHead(task.getName());
 		fragment.printContent(task.getDescription());
 		fragment.printDate(task.getDate());
