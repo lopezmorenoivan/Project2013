@@ -34,9 +34,6 @@ public class NewsInstance extends Application {
 		return INSTANCE;
 	}
 
-	// @matt
-	// same for news id, much better for update/delete
-	// BTW, news takes an S even at the singular form, (e.g. a news story) ;)
 	public void create(String title, String content, String description,
 			byte picture[], User user) {
 		String query = "INSERT INTO dbo.News ((SELECT idCompany FROM dbo.Employee WHERE idEmployee="
@@ -54,7 +51,6 @@ public class NewsInstance extends Application {
 		return Database.readFromNews(currentUser);
 	}
 
-	// same conditions for old and new elts
 	public void update(New oldN, New newN, User u) {
 		String query = "UPDATE dbo.News "
 				+ " SET title="

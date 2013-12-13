@@ -56,8 +56,6 @@ public class UsersInstance extends Application {
 		return Database.readFromUsers(currentUser);
 	}
 
-	// /!\ new user must be a full copy of oldUser before changes are made to
-	// the object and passed through update
 	public void update(User oldU, User newU) {
 		String query = "UPDATE dbo.Employee " + " SET name=" + newU.getName()
 				+ "surname=" + newU.getSurname() + "privileges="
