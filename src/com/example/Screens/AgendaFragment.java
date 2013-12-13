@@ -2,8 +2,6 @@ package com.example.Screens;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -36,17 +34,6 @@ public class AgendaFragment extends Fragment {
 	private AgendaInstance agendaInstance = AgendaInstance.getInstance();
 	private ArrayList<Task> agenda = agendaInstance.getAgenda();
 	private Task taskSelected;
-
-	Task first = new Task ("first","do the first thing", 
-			new GregorianCalendar(2005, Calendar.DECEMBER, 25));
-	Task second = new Task ("second","do the second thing",
-			new GregorianCalendar(2005, Calendar.DECEMBER, 25));
-	Task third = new Task ("third","do the third thing",
-			new GregorianCalendar(2005, Calendar.DECEMBER, 25));
-	Task fourth = new Task ("fourth","do the fourth thing",
-			new GregorianCalendar(2005, Calendar.DECEMBER, 25));
-	Task fifth = new Task ("fifth","do the fifth thing",
-			new GregorianCalendar(2005, Calendar.DECEMBER, 25));
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, 
@@ -95,7 +82,6 @@ public class AgendaFragment extends Fragment {
 	}
 	
 	private void add() {
-		agenda.add(first);
 		Intent i = new Intent (getActivity().getApplicationContext(), AddTaskActivity.class);
 		startActivity(i);
 	}

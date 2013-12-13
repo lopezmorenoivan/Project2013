@@ -21,9 +21,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.Logic.New;
-import com.example.Logic.User;
 import com.example.Model.NewsInstance;
-import com.example.Tools.BitmapUtil;
 import com.example.project2013.AddNewActivity;
 import com.example.project2013.NewContentActivity;
 import com.example.project2013.R;
@@ -34,12 +32,6 @@ public class NewsFragment extends Fragment {
 	private ListView list;
 	private Menu menu;
 	private New newSelected;
-	
-	New first = new New ("first", "this is the first new", "this is the first description", null);
-	New second = new New ("second", "this is the second new", "this is the second description", null);
-	New third = new New ("third", "this is the third new", "this is the third description", null);
-	New fourth = new New ("fourth", "this is the fourth new", "this is the fourth description", null);
-	New fifth = new New ("fifth", "this is the fifth new", "this is the fifth description", null);
 	
 	private NewsInstance newsInstance = NewsInstance.getInstance();
 	private ArrayList<New> news = newsInstance.getNews();
@@ -91,11 +83,6 @@ public class NewsFragment extends Fragment {
 	}
 	
 	private void add() {
-		news.add(first);
-		newsInstance.create(first.getTitle(), first.getContent(), 
-				first.getDescription(), first.getPicture(), 
-				new User ("Julien", "Polizzi", null, 1,"+4511111111", "140E", 1,
-						"pos1" ,"julien.polizzi@gmail.com",""));
 		Intent i = new Intent (getActivity().getApplicationContext(), AddNewActivity.class);
 		startActivity(i);
 	}

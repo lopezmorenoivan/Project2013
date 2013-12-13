@@ -7,7 +7,6 @@ import com.example.Logic.User;
 import com.example.Tools.Database;
 
 import android.app.Application;
-import android.graphics.Bitmap;
 
 public class NewsInstance extends Application {
 	private static NewsInstance INSTANCE = null;

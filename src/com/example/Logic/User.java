@@ -2,8 +2,6 @@ package com.example.Logic;
 
 import java.io.Serializable;
 
-import android.graphics.Bitmap;
-
 public class User implements Serializable {
 	private int id;
 	private String name;

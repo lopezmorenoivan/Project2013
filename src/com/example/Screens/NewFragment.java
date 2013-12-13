@@ -5,9 +5,7 @@ import java.util.ArrayList;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -117,9 +115,6 @@ public class NewFragment extends Fragment {
 		if (picture != null) {
 			image.setImageBitmap(BitmapUtil.byteArrayToBitmap(picture));
 		}
-			//image.setImageBitmap(BitmapUtil.getBitMapFromString(BitmapUtil.convertBitmapToString(BitmapUtil.drawableToBitmap(getResources().
-			//		getDrawable(android.R.drawable.ic_menu_help)))));
-		//}
 		
 	}
 	

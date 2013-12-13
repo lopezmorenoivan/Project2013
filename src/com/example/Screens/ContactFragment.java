@@ -5,14 +5,12 @@ import java.util.ArrayList;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NavUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,12 +18,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.Logic.Task;
 import com.example.Logic.User;
 import com.example.Model.UsersInstance;
 import com.example.Tools.BitmapUtil;
 import com.example.project2013.R;
-import com.example.project2013.UpdateContactActivity;
 
 @SuppressLint("NewApi")
 public class ContactFragment extends Fragment {

@@ -1,11 +1,9 @@
 package com.example.Screens;
 
 import android.annotation.SuppressLint;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NavUtils;
-import android.support.v7.app.ActionBar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -14,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.Logic.User;
 import com.example.Tools.BitmapUtil;
 import com.example.project2013.R;
 
@@ -25,8 +22,6 @@ public class ContactContentFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, 
 			ViewGroup container, 
 			Bundle savedInstanceState) {
-
-		Log.v("contactContentFragment","1");
 		
 		getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 

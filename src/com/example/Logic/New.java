@@ -3,8 +3,6 @@ package com.example.Logic;
 import java.io.Serializable;
 import java.util.Arrays;
 
-import android.graphics.Bitmap;
-
 public class New implements Serializable{
 	private int id;
 	private String title;

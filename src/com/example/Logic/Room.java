@@ -2,8 +2,6 @@ package com.example.Logic;
 
 import java.util.Arrays;
 
-import android.graphics.Bitmap;
-
 public class Room {
 	private int id;
 	private String name;

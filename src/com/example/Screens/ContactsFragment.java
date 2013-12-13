@@ -8,7 +8,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -35,15 +34,6 @@ public class ContactsFragment extends Fragment {
 	private ListView list;
 	private Menu menu;
 	private User userSelected;
-
-	User julien = new User ("Julien", "Polizzi", null, 1,"+4511111111", "140E", 1,
-			"pos1" ,"julien.polizzi@gmail.com","");
-	User matthieu = new User ("Matthieu", "Patin", null, 2, "+4522222222", "140E", 2, 
-			"pos2", "matthieu.patin@gmail.com","");
-	User daniel = new User ("Daniel", "Gutierrez", null, 3, "+4533333333", "140E", 3, 
-			"pos3", "daniel.gutierrez@gmail.com","");
-	User ivan = new User ("Ivan", "Lopez", null, 4, "+4544444444", "140E", 4, 
-			"pos4", "ivan.lopez@gmail.com","");
 	
 	private UsersInstance usersInstance = UsersInstance.getInstance();
 	private ArrayList<User> users = usersInstance.getUsers();
@@ -64,13 +54,9 @@ public class ContactsFragment extends Fragment {
 		inflater.inflate(R.menu.main, menu); 
 		
 		this.menu = menu;
-
-	    //setupSearchView(menu);
 	    
 	    menu.findItem(R.id.remove).setVisible(false);
 	    menu.findItem(R.id.update).setVisible(false);
-	    
-	    Log.v("4","4");
 	}
 	
 	@Override
@@ -100,12 +86,6 @@ public class ContactsFragment extends Fragment {
 	}
 	
 	private void add() {
-		users.add(julien);
-		/*usersInstance.create(1, julien.getName(), julien.getSurname(),
-				julien.getPicture(), julien.getPrivileges(), julien.getPhone(),
-				julien.getOffice(), julien.getLocation(), julien.getPosition(), 
-				julien.getMail(), julien.getPassword());*/
-		usersInstance.create(1, "", "", null, 1, null, null, 1, null, null, null);
 		Intent i = new Intent (getActivity().getApplicationContext(), AddContactActivity.class);
 		startActivity(i);
 	}

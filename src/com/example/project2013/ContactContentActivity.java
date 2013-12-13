@@ -1,7 +1,5 @@
 package com.example.project2013;
 
-import java.io.Serializable;
-
 import com.example.Logic.User;
 import com.example.Screens.ContactContentFragment;
 

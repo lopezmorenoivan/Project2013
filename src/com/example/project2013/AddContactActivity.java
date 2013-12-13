@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 
-import com.example.Screens.ContactFragment;
-
 public class AddContactActivity extends FragmentActivity {
 
 	@Override

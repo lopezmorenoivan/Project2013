@@ -5,7 +5,6 @@ import com.example.Screens.NewContentFragment;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 
 public class NewContentActivity extends FragmentActivity {
 	
@@ -23,8 +22,6 @@ public class NewContentActivity extends FragmentActivity {
 		fragment.printTitle(noticia.getTitle());
 		fragment.printHead(noticia.getTitle());
 		fragment.printContent(noticia.getContent());
-		
-		Log.v("llega","a imprimir");
 		
 		fragment.printPicture(noticia.getPicture());
 	}

@@ -2,12 +2,9 @@ package com.example.project2013;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.Menu;
 
 import com.example.Logic.New;
-import com.example.Logic.User;
-import com.example.Screens.ContactFragment;
 import com.example.Screens.NewFragment;
 
 
