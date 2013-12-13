@@ -1,10 +1,12 @@
 package com.example.Logic;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 import android.graphics.Bitmap;
 
 public class New implements Serializable{
+	private int id;
 	private String title;
 	private String content;
 	private String description;
@@ -16,6 +18,14 @@ public class New implements Serializable{
 		this.content = content;
 		this.description = description;
 		this.picture = picture;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	public String getTitle() {
@@ -52,7 +62,8 @@ public class New implements Serializable{
 
 	@Override
 	public String toString() {
-		return "New [title=" + title + ", content=" + content
-				+ ", description=" + description + ", picture=" + picture + "]";
+		return "New [id=" + id + ", title=" + title + ", content=" + content
+				+ ", description=" + description + ", picture="
+				+ Arrays.toString(picture) + "]";
 	}
 }

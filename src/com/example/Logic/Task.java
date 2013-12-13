@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.GregorianCalendar;
 
 public class Task implements Serializable{
+	private int id;
 	private String name;
 	private String description;
 	private GregorianCalendar date;
@@ -13,6 +14,14 @@ public class Task implements Serializable{
 		this.name = name;
 		this.description = description;
 		this.date = date;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	public String getName() {
@@ -36,7 +45,7 @@ public class Task implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "Task [name=" + name + ", description=" + description
-				+ ", date=" + date + "]";
+		return "Task [id=" + id + ", name=" + name + ", description="
+				+ description + ", date=" + date + "]";
 	}
 }

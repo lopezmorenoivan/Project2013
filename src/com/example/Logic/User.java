@@ -35,10 +35,10 @@ public class User implements Serializable {
 		this.password = password;
 	}
 	
-	public int getID() {
+	public int getId() {
 		return id;
 	}
-	public void setID(int id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -104,7 +104,7 @@ public class User implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "User [ID=" + id + ", name=" + name + ", surname=" + surname
+		return "User [id=" + id + ", name=" + name + ", surname=" + surname
 				+ ", privileges=" + privileges + ", phone=" + phone
 				+ ", office=" + office + ", location=" + location
 				+ ", position=" + position + ", mail=" + mail +

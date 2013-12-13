@@ -1,8 +1,11 @@
 package com.example.Logic;
 
+import java.util.Arrays;
+
 import android.graphics.Bitmap;
 
 public class Room {
+	private int id;
 	private String name;
 	private byte map [];
 	private int location;
@@ -12,6 +15,14 @@ public class Room {
 		this.name = name;
 		this.map = map;
 		this.location = location;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	public String getName() {
@@ -35,7 +46,7 @@ public class Room {
 	
 	@Override
 	public String toString() {
-		return "Room [name=" + name + ", map=" + map + ", location=" + location
-				+ "]";
+		return "Room [id=" + id + ", name=" + name + ", map="
+				+ Arrays.toString(map) + ", location=" + location + "]";
 	}
 }
