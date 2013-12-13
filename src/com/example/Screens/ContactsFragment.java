@@ -82,7 +82,7 @@ public class ContactsFragment extends Fragment {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-			case R.id.search: break;
+			//case R.id.search: break;
 			case R.id.add: add(); break;
 			case R.id.remove: users.remove(userSelected); break;
 			case R.id.update: update(); break;
@@ -110,6 +110,8 @@ public class ContactsFragment extends Fragment {
 		Bundle bundle = new Bundle();  
 		bundle.putSerializable("contact", (Serializable) userSelected);
 		i.putExtras(bundle);
+		
+		users.remove(userSelected);
 
 		startActivity(i);
 	}
@@ -119,7 +121,7 @@ public class ContactsFragment extends Fragment {
 	    menu.findItem(R.id.update).setVisible(true);
 	    
 	    menu.findItem(R.id.add).setVisible(false);
-	    menu.findItem(R.id.search).setVisible(false);
+	    //menu.findItem(R.id.search).setVisible(false);
 	    menu.findItem(R.id.refresh).setVisible(false);
 	}
 	
@@ -128,7 +130,7 @@ public class ContactsFragment extends Fragment {
 	    menu.findItem(R.id.update).setVisible(false);
 	    
 	    menu.findItem(R.id.add).setVisible(true);
-	    menu.findItem(R.id.search).setVisible(true);
+	    //menu.findItem(R.id.search).setVisible(true);
 	    menu.findItem(R.id.refresh).setVisible(true);
 	}
 	
@@ -172,7 +174,7 @@ public class ContactsFragment extends Fragment {
 	
 	private void setupSearchView(Menu menu) {
 		Log.v("5","5");
-		android.support.v7.widget.SearchView searchView = 
+		/*android.support.v7.widget.SearchView searchView = 
 				(android.support.v7.widget.SearchView) menu.findItem(R.id.search).getActionView();
 		Log.v("6","6");
 	    searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {       
@@ -187,7 +189,7 @@ public class ContactsFragment extends Fragment {
 		        Log.v("search","dunno");
 		        return false;
 		    }
-		});
+		});*/
 	}
 	
 	class AdapterUsers extends ArrayAdapter<User> {

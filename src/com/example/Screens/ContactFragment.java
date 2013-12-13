@@ -30,11 +30,6 @@ public class ContactFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, 
 			                 ViewGroup container, 
 			                 Bundle savedInstanceState) {
-		/*
-		if (getActivity().getClass().equals(UpdateContactActivity.class)){
-			past = (User) savedInstanceState.getSerializable("contact");
-		}
-		*/
 		getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		return inflater.inflate(R.layout.fragment_contact, container, false);
@@ -50,17 +45,7 @@ public class ContactFragment extends Fragment {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		if(item.getItemId()!=android.R.id.home) {
-			if (past!=null) {
-				User future = getUser();
-				future.setLocation(past.getLocation());
-				future.setID(past.getID());
-				future.setPassword(past.getPassword());
-				
-				users.set(users.indexOf(past),future);
-				UsersInstance.setUsers(users);
-			} else {
 				users.add(getUser());
-			} 
 		}
 		
 		NavUtils.navigateUpFromSameTask(this.getActivity());

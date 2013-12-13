@@ -17,11 +17,6 @@ public class UpdateNewActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		/*
-		Bundle bundle=new Bundle();
-		bundle.putSerializable("noticia",(Serializable)noticia);
-		fragment.setArguments(bundle);
-		*/
 		setContentView(R.layout.activity_update_new);
 
 		NewFragment fragment = (NewFragment)getSupportFragmentManager()

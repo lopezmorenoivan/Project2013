@@ -30,11 +30,6 @@ public class NewFragment extends Fragment {
 			                 ViewGroup container, 
 			                 Bundle savedInstanceState) {
 		
-		/*
-		if (getActivity().getClass().equals(UpdateContactActivity.class)){
-			past = (User) savedInstanceState.getSerializable("contact");
-		}
-		*/
 		getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		return inflater.inflate(R.layout.fragment_new, container, false);
@@ -50,15 +45,7 @@ public class NewFragment extends Fragment {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		if(item.getItemId()!=android.R.id.home) {
-			if (past!=null) {
-				New future = getNew();
-				//future.setID(past.getID());
-				
-				news.set(news.indexOf(past),future);
-				NewsInstance.setNews(news);
-			} else {
 				news.add(getNew());
-			} 
 		}
 		
 		NavUtils.navigateUpFromSameTask(this.getActivity());

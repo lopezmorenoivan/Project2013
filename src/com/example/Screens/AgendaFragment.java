@@ -79,7 +79,7 @@ public class AgendaFragment extends Fragment {
 		Log.v("agenda","2");
 		
 		switch (item.getItemId()) {
-			case R.id.search: break;
+			//case R.id.search: break;
 			case R.id.add: add(); break;
 			case R.id.remove: agenda.remove(taskSelected); break;
 			case R.id.update: update(); break;
@@ -105,6 +105,8 @@ public class AgendaFragment extends Fragment {
 		Bundle bundle = new Bundle();  
 		bundle.putSerializable("task", (Serializable) taskSelected);
 		i.putExtras(bundle);
+		
+		agenda.remove(taskSelected);
 
 		startActivity(i);
 	}
@@ -114,7 +116,7 @@ public class AgendaFragment extends Fragment {
 	    menu.findItem(R.id.update).setVisible(true);
 	    
 	    menu.findItem(R.id.add).setVisible(false);
-	    menu.findItem(R.id.search).setVisible(false);
+	    //menu.findItem(R.id.search).setVisible(false);
 	    menu.findItem(R.id.refresh).setVisible(false);
 	}
 	
@@ -123,7 +125,7 @@ public class AgendaFragment extends Fragment {
 	    menu.findItem(R.id.update).setVisible(false);
 	    
 	    menu.findItem(R.id.add).setVisible(true);
-	    menu.findItem(R.id.search).setVisible(true);
+	    //menu.findItem(R.id.search).setVisible(true);
 	    menu.findItem(R.id.refresh).setVisible(true);
 	}
 	

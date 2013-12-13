@@ -16,19 +16,12 @@ public class UpdateContactActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-		/*
-		Bundle bundle=new Bundle();
-		bundle.putSerializable("contact",(Serializable)contact);
-		fragment.setArguments(bundle);
-		*/
 		setContentView(R.layout.activity_update_contact);
 		
 		ContactFragment fragment = (ContactFragment)getSupportFragmentManager()
 				.findFragmentById(R.id.fragment_contact);
-		
 		User contact = (User) getIntent().getExtras().getSerializable("contact");
-			
+
 		fragment.printMail(contact.getMail());
 		fragment.printName(contact.getName());
 		fragment.printOffice(contact.getOffice());

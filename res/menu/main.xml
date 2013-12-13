@@ -24,11 +24,4 @@
         android:showAsAction="collapseActionView|ifRoom"
         android:title="@string/RefreshTitle"/>
 
-    <item
-        android:id="@+id/search"
-        android:actionViewClass="android.support.v7.widget.SearchView"
-        android:icon="@drawable/ic_search"
-        android:showAsAction="collapseActionView|ifRoom"
-        android:title="@string/SearchTitle"/>
-
 </menu>

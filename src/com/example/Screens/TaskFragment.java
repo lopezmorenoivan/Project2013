@@ -19,7 +19,6 @@ import com.example.Model.AgendaInstance;
 import com.example.project2013.R;
 
 @SuppressLint("NewApi")
-
 public class TaskFragment extends Fragment {
 	Task past;
 	
@@ -29,11 +28,7 @@ public class TaskFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, 
 			                 ViewGroup container, 
 			                 Bundle savedInstanceState) {
-		/*
-		if (getActivity().getClass().equals(UpdateContactActivity.class)){
-			past = (User) savedInstanceState.getSerializable("contact");
-		}
-		*/
+
 		getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		return inflater.inflate(R.layout.fragment_task, container, false);
@@ -49,15 +44,7 @@ public class TaskFragment extends Fragment {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		if(item.getItemId()!=android.R.id.home) {
-			if (past!=null) {
-				Task future = getTask();
-				//future.setID(past.getID());
-				
-				agenda.set(agenda.indexOf(past),future);
-				AgendaInstance.setAgenda(agenda);
-			} else {
-				agenda.add(getTask());
-			} 
+			agenda.add(getTask());
 		}
 		
 		NavUtils.navigateUpFromSameTask(this.getActivity());
@@ -65,7 +52,6 @@ public class TaskFragment extends Fragment {
         return true;
 	}
 	
-	@SuppressLint("NewApi")
 	public void printTitle (String title) {
 		getActivity().getActionBar().setTitle(title);
 	}

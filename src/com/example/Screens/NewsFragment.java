@@ -71,7 +71,7 @@ public class NewsFragment extends Fragment {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-			case R.id.search: break;
+			//case R.id.search: break;
 			case R.id.add: add(); break;
 			case R.id.remove: news.remove(newSelected); break;
 			case R.id.update: update(); break;
@@ -99,6 +99,8 @@ public class NewsFragment extends Fragment {
 		Bundle bundle = new Bundle();  
 		bundle.putSerializable("noticia", (Serializable) newSelected);
 		i.putExtras(bundle);
+		
+		news.remove(newSelected);
 	
 		startActivity(i);
 	}
@@ -108,7 +110,7 @@ public class NewsFragment extends Fragment {
 	    menu.findItem(R.id.update).setVisible(true);
 	    
 	    menu.findItem(R.id.add).setVisible(false);
-	    menu.findItem(R.id.search).setVisible(false);
+	    //menu.findItem(R.id.search).setVisible(false);
 	    menu.findItem(R.id.refresh).setVisible(false);
 	}
 	
@@ -117,7 +119,7 @@ public class NewsFragment extends Fragment {
 	    menu.findItem(R.id.update).setVisible(false);
 	    
 	    menu.findItem(R.id.add).setVisible(true);
-	    menu.findItem(R.id.search).setVisible(true);
+	    //menu.findItem(R.id.search).setVisible(true);
 	    menu.findItem(R.id.refresh).setVisible(true);
 	}
 	
