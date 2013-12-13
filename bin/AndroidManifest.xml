@@ -3,7 +3,7 @@
     package="com.example.project2013"
     android:versionCode="1"
     android:versionName="1.0" >
-    
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-sdk
@@ -20,11 +20,7 @@
         <activity
             android:name="com.example.project2013.MainActivity"
             android:label="@string/name_shown" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
@@ -55,7 +51,7 @@
         </activity>
         <activity
             android:name="com.example.project2013.AgendaContentActivity"
-            android:label="@string/name_shown" 
+            android:label="@string/name_shown"
             android:parentActivityName="com.example.project2013.MainActivity" >
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -122,6 +118,16 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.project2013.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.project2013.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
