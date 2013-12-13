@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.Tools.BitmapUtil;
 import com.example.project2013.R;
 
 @SuppressLint("NewApi")
@@ -55,9 +56,13 @@ public class NewContentFragment extends Fragment {
 		newHead.setText(text);
 	}
 	
-	public void printPicture (Bitmap picture) {
+	public void printPicture (byte picture []) {
 		ImageView image = (ImageView) getView().findViewById(R.id.NewImage);
-		
-		image.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_menu_help));
+		if (picture == null) {
+			image.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_menu_help));
+		} else {
+			image.setImageBitmap(BitmapUtil.byteArrayToBitmap(picture));
+		}
+
 	}
 }

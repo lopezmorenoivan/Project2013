@@ -30,7 +30,6 @@ public class UpdateContactActivity extends FragmentActivity {
 		fragment.printPosition(contact.getPosition());
 		fragment.printPrivileges(contact.getPrivileges());
 		fragment.printSurname(contact.getSurname());
-		fragment.printLocation(contact.getLocation());
 		fragment.printTitle("Update Contact");
 	}
 	

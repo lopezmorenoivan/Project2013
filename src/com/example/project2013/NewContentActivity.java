@@ -5,6 +5,7 @@ import com.example.Screens.NewContentFragment;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 
 public class NewContentActivity extends FragmentActivity {
 	
@@ -14,7 +15,7 @@ public class NewContentActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_new_content);
 		
-		New noticia = (New) getIntent().getExtras().getSerializable("new");
+		New noticia = (New) getIntent().getExtras().getSerializable("noticia");
 		
 		NewContentFragment fragment = (NewContentFragment)getSupportFragmentManager()
 					.findFragmentById(R.id.fragment_new_content);
@@ -22,6 +23,9 @@ public class NewContentActivity extends FragmentActivity {
 		fragment.printTitle(noticia.getTitle());
 		fragment.printHead(noticia.getTitle());
 		fragment.printContent(noticia.getContent());
+		
+		Log.v("llega","a imprimir");
+		
 		fragment.printPicture(noticia.getPicture());
 	}
 }

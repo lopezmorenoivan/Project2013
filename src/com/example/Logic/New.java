@@ -8,9 +8,9 @@ public class New implements Serializable{
 	private String title;
 	private String content;
 	private String description;
-	private Bitmap picture;
+	private byte picture [];
 	
-	public New(String title, String content, String description, Bitmap picture) {
+	public New(String title, String content, String description, byte picture []) {
 		super();
 		this.title = title;
 		this.content = content;
@@ -42,11 +42,11 @@ public class New implements Serializable{
 		this.description = description;
 	}
 
-	public Bitmap getPicture() {
+	public byte [] getPicture() {
 		return picture;
 	}
 
-	public void setPicture(Bitmap picture) {
+	public void setPicture(byte picture []) {
 		this.picture = picture;
 	}
 

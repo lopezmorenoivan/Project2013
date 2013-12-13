@@ -8,7 +8,7 @@ public class User implements Serializable {
 	private int id;
 	private String name;
 	private String surname;
-	private Bitmap picture;
+	private byte picture [];
 	private int privileges;
 	private String phone;
 	private String office;
@@ -19,7 +19,7 @@ public class User implements Serializable {
 	//this field is hear due to the DB necessities :(
 	private String password;
 	
-	public User(String name, String surname, Bitmap picture,
+	public User(String name, String surname, byte picture [],
 			int privileges, String phone, String office, int location,
 			String position, String mail, String password) {
 		super();
@@ -53,10 +53,10 @@ public class User implements Serializable {
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
-	public Bitmap getPicture() {
+	public byte [] getPicture() {
 		return picture;
 	}
-	public void setPicture(Bitmap picture) {
+	public void setPicture(byte picture []) {
 		this.picture = picture;
 	}
 	public int getPrivileges() {

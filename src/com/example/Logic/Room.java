@@ -4,10 +4,10 @@ import android.graphics.Bitmap;
 
 public class Room {
 	private String name;
-	private Bitmap map;
+	private byte map [];
 	private int location;
 	
-	public Room(String name, Bitmap map, int location) {
+	public Room(String name, byte map [], int location) {
 		super();
 		this.name = name;
 		this.map = map;
@@ -20,10 +20,10 @@ public class Room {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Bitmap getMap() {
+	public byte [] getMap() {
 		return map;
 	}
-	public void setMap(Bitmap map) {
+	public void setMap(byte map []) {
 		this.map = map;
 	}
 	public int getLocation() {

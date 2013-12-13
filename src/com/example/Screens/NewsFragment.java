@@ -22,6 +22,7 @@ import android.widget.TextView;
 
 import com.example.Logic.New;
 import com.example.Model.NewsInstance;
+import com.example.Tools.BitmapUtil;
 import com.example.project2013.AddNewActivity;
 import com.example.project2013.NewContentActivity;
 import com.example.project2013.R;
@@ -155,7 +156,7 @@ public class NewsFragment extends Fragment {
 				else {
 					Intent i = new Intent(getActivity().getApplicationContext(), NewContentActivity.class);
 					Bundle bundle = new Bundle();  
-					bundle.putSerializable("new", (Serializable) noticia);
+					bundle.putSerializable("noticia", (Serializable) noticia);
 					i.putExtras(bundle);
 					startActivity(i);
 				}

@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.Logic.User;
+import com.example.Tools.BitmapUtil;
 import com.example.project2013.R;
 
 @SuppressLint("NewApi")
@@ -80,10 +81,12 @@ public class ContactContentFragment extends Fragment {
 		message.setText(text);
 	}
 
-	public void printPicture (Bitmap picture) {
+	public void printPicture (byte picture []) {
 		ImageView image = (ImageView) getView().findViewById(R.id.ContactPicture);
 
-		image.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_menu_help));
+		if (picture != null) {
+			image.setImageBitmap(BitmapUtil.byteArrayToBitmap(picture));
+		}
 	}
 
 	public void printLocation (int location) {
