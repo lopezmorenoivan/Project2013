@@ -1,5 +1,7 @@
 package com.example.Tools;
 import java.sql.Connection;
+
+import com.microsoft.sqlserver.jdbc.*;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -40,7 +42,7 @@ public class Database {
         ArrayList<Room> result = new ArrayList<Room>();
 
         String query = "SELECT * FROM dbo.Room WHERE idCompany="+
-                            "(SELECT idCompany FROM dbo.Employee WHERE idEmployee="+u.getID()+");";
+                            "(SELECT idCompany FROM dbo.Employee WHERE idEmployee="+u.getId()+");";
 
         String connectionUrl = "jdbc:sqlserver://y5huf0ke8e.database.windows.net:1433;database=DB2;user=database@y5huf0ke8e;password=Finlandsgade22;loginTimeout=30;";
         Connection connexion = null;
@@ -70,7 +72,7 @@ public class Database {
     public static ArrayList<Task> readFromAgenda(User u){
         ArrayList<Task> result = new ArrayList<Task>();
 
-        String query = "SELECT * FROM dbo.Task WHERE idEmployee="+u.getID()+";";
+        String query = "SELECT * FROM dbo.Task WHERE idEmployee="+u.getId()+";";
 
         String connectionUrl = "jdbc:sqlserver://y5huf0ke8e.database.windows.net:1433;database=DB2;user=database@y5huf0ke8e;password=Finlandsgade22;loginTimeout=30;";
         Connection connexion = null;
@@ -102,7 +104,7 @@ public class Database {
     public static ArrayList<New> readFromNews(User u){
         ArrayList<New> result = new ArrayList<New>();
 
-        String query = "SELECT * FROM dbo.News WHERE idCompany=(SELECT idCompany FROM dbo.Employee WHERE idEmployee="+u.getID()+");";
+        String query = "SELECT * FROM dbo.News WHERE idCompany=(SELECT idCompany FROM dbo.Employee WHERE idEmployee="+u.getId()+");";
 
         String connectionUrl = "jdbc:sqlserver://y5huf0ke8e.database.windows.net:1433;database=DB2;user=database@y5huf0ke8e;password=Finlandsgade22;loginTimeout=30;";
         Connection connexion = null;
@@ -132,7 +134,7 @@ public class Database {
         ArrayList<User> result = new ArrayList<User>();
 
         String query = "SELECT * FROM dbo.User WHERE idCompany="+
-                "(SELECT idCompany FROM dbo.Employee WHERE idEmployee="+u.getID()+");";
+                "(SELECT idCompany FROM dbo.Employee WHERE idEmployee="+u.getId()+");";
 
         String connectionUrl = "jdbc:sqlserver://y5huf0ke8e.database.windows.net:1433;database=DB2;user=database@y5huf0ke8e;password=Finlandsgade22;loginTimeout=30;";
         Connection connexion = null;

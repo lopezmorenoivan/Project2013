@@ -21,6 +21,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.Logic.New;
+import com.example.Logic.User;
 import com.example.Model.NewsInstance;
 import com.example.Tools.BitmapUtil;
 import com.example.project2013.AddNewActivity;
@@ -91,6 +92,10 @@ public class NewsFragment extends Fragment {
 	
 	private void add() {
 		news.add(first);
+		newsInstance.create(first.getTitle(), first.getContent(), 
+				first.getDescription(), first.getPicture(), 
+				new User ("Julien", "Polizzi", null, 1,"+4511111111", "140E", 1,
+						"pos1" ,"julien.polizzi@gmail.com",""));
 		Intent i = new Intent (getActivity().getApplicationContext(), AddNewActivity.class);
 		startActivity(i);
 	}

@@ -101,6 +101,11 @@ public class ContactsFragment extends Fragment {
 	
 	private void add() {
 		users.add(julien);
+		/*usersInstance.create(1, julien.getName(), julien.getSurname(),
+				julien.getPicture(), julien.getPrivileges(), julien.getPhone(),
+				julien.getOffice(), julien.getLocation(), julien.getPosition(), 
+				julien.getMail(), julien.getPassword());*/
+		usersInstance.create(1, "", "", null, 1, null, null, 1, null, null, null);
 		Intent i = new Intent (getActivity().getApplicationContext(), AddContactActivity.class);
 		startActivity(i);
 	}
