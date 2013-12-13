@@ -32,6 +32,7 @@ public final class R {
         public static final int ic_remove=0x7f020005;
         public static final int ic_search=0x7f020006;
         public static final int ic_update=0x7f020007;
+        public static final int splash_screen=0x7f020008;
     }
     public static final class id {
         public static final int AgendaContent=0x7f0a000a;
@@ -77,7 +78,6 @@ public final class R {
         public static final int realtabcontent=0x7f0a0005;
         public static final int refresh=0x7f0a0038;
         public static final int remove=0x7f0a0036;
-        public static final int search=0x7f0a0039;
         public static final int tabletrealtabcontent=0x7f0a0006;
         public static final int task_date=0x7f0a002f;
         public static final int task_description=0x7f0a002e;
@@ -112,8 +112,9 @@ public final class R {
         public static final int fragment_new=0x7f03000f;
         public static final int fragment_new_content=0x7f030010;
         public static final int fragment_news=0x7f030011;
-        public static final int fragment_task=0x7f030012;
-        public static final int list_view=0x7f030013;
+        public static final int fragment_splash_screen=0x7f030012;
+        public static final int fragment_task=0x7f030013;
+        public static final int list_view=0x7f030014;
     }
     public static final class menu {
         public static final int add_update=0x7f090000;

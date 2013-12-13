@@ -1,20 +1,17 @@
 package com.example.project2013;
 
+import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTabHost;
+import android.view.Menu;
+import android.widget.TabHost.OnTabChangeListener;
+
 import com.example.Screens.AgendaContentFragment;
 import com.example.Screens.AgendaFragment;
 import com.example.Screens.ContactContentFragment;
 import com.example.Screens.ContactsFragment;
 import com.example.Screens.NewContentFragment;
 import com.example.Screens.NewsFragment;
-
-import android.app.SearchManager;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTabHost;
-import android.util.Log;
-import android.view.Menu;
-import android.widget.TabHost.OnTabChangeListener;
 
 
 public class MainActivity extends FragmentActivity {
@@ -35,6 +32,13 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
+		
+		menu.findItem(R.id.remove).setVisible(false);
+	    menu.findItem(R.id.update).setVisible(false);
+	    
+	    menu.findItem(R.id.add).setVisible(true);
+	    //menu.findItem(R.id.search).setVisible(true);
+	    menu.findItem(R.id.refresh).setVisible(true);
 
 		return true;
 	}
